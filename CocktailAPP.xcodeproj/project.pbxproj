@@ -250,8 +250,8 @@
 		630EE2122A80203100DA332B /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				630EE2132A80203B00DA332B /* RootViewModel.swift */,
 				630EE2192A8020BB00DA332B /* RootView.swift */,
+				630EE2132A80203B00DA332B /* RootViewModel.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";

@@ -25,7 +25,7 @@ struct RootView: View {
             
         case Status.loaded:
             //TODO: - implement homeView
-            EmptyView()
+            AnyView(EmptyView())
         }
     }
 }
