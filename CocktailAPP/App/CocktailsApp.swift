@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct CocktailAPPApp: App {
+struct CocktailsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
