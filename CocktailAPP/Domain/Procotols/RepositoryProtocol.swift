@@ -7,7 +7,7 @@
 
 import Foundation
 protocol RepositoryProtocol {
-//    func getRandomCocktail() async throws -> Cocktail
+    func getRandomCocktail() async throws -> Cocktail
 //    func filterByName(cocktailName name: String) async throws -> [Cocktail]?
 //    func getCocktailDetailById(idCocktail id: String) async throws-> Cocktail
 }

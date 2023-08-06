@@ -24,8 +24,11 @@ struct RootView: View {
             Text("Error \(errorString)")
             
         case Status.loaded:
-            //TODO: - implement homeView
-            AnyView(EmptyView())
+            let homeViewModel = HomeViewModel(repository: rootViewModel.repository)
+            HomeView(homeViewModel: homeViewModel).tabItem {
+                Label("RandomCocktail", systemImage: "wand.and.stars")
+                //arrow.2.circlepath.circle
+            }
         }
     }
 }
