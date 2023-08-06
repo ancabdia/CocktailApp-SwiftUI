@@ -17,6 +17,12 @@
 		630EE2142A80203B00DA332B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2132A80203B00DA332B /* RootViewModel.swift */; };
 		630EE2162A80206A00DA332B /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2152A80206A00DA332B /* RepositoryProtocol.swift */; };
 		630EE21A2A8020BB00DA332B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2192A8020BB00DA332B /* RootView.swift */; };
+		630EE21C2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE21B2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift */; };
+		630EE21E2A80230800DA332B /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE21D2A80230800DA332B /* RemoteDataSourceProtocol.swift */; };
+		630EE2202A80234400DA332B /* RemoteCocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE21F2A80234400DA332B /* RemoteCocktail.swift */; };
+		630EE2222A80243F00DA332B /* RepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2212A80243F00DA332B /* RepositoryImpl.swift */; };
+		630EE2242A80246900DA332B /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2232A80246900DA332B /* Cocktail.swift */; };
+		630EE2262A8024AD00DA332B /* CocktailMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2252A8024AD00DA332B /* CocktailMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,12 @@
 		630EE2132A80203B00DA332B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		630EE2152A80206A00DA332B /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		630EE2192A8020BB00DA332B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		630EE21B2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailDataSourceImpl.swift; sourceTree = "<group>"; };
+		630EE21D2A80230800DA332B /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
+		630EE21F2A80234400DA332B /* RemoteCocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktail.swift; sourceTree = "<group>"; };
+		630EE2212A80243F00DA332B /* RepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImpl.swift; sourceTree = "<group>"; };
+		630EE2232A80246900DA332B /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		630EE2252A8024AD00DA332B /* CocktailMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +201,7 @@
 		630EE2012A801D1E00DA332B /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				630EE2252A8024AD00DA332B /* CocktailMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 				630EE2052A801D4C00DA332B /* Datasource */,
 				630EE2042A801D3A00DA332B /* Models */,
 				630EE2032A801D3600DA332B /* Protocols */,
+				630EE2212A80243F00DA332B /* RepositoryImpl.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -206,6 +220,7 @@
 		630EE2032A801D3600DA332B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				630EE21D2A80230800DA332B /* RemoteDataSourceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -213,6 +228,7 @@
 		630EE2042A801D3A00DA332B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				630EE21F2A80234400DA332B /* RemoteCocktail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +236,7 @@
 		630EE2052A801D4C00DA332B /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				630EE21B2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -235,6 +252,7 @@
 		630EE2072A801D8F00DA332B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				630EE2232A80246900DA332B /* Cocktail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,9 +405,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				630EE1D22A801C1700DA332B /* CocktailsApp.swift in Sources */,
+				630EE2262A8024AD00DA332B /* CocktailMapper.swift in Sources */,
 				630EE2162A80206A00DA332B /* RepositoryProtocol.swift in Sources */,
+				630EE2222A80243F00DA332B /* RepositoryImpl.swift in Sources */,
+				630EE2242A80246900DA332B /* Cocktail.swift in Sources */,
+				630EE21E2A80230800DA332B /* RemoteDataSourceProtocol.swift in Sources */,
 				630EE2102A801FD900DA332B /* SplashView.swift in Sources */,
 				630EE2142A80203B00DA332B /* RootViewModel.swift in Sources */,
+				630EE2202A80234400DA332B /* RemoteCocktail.swift in Sources */,
+				630EE21C2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift in Sources */,
 				630EE21A2A8020BB00DA332B /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

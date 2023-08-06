@@ -11,7 +11,11 @@ import SwiftUI
 struct CocktailsApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            let remoteDataSource = RemoteCocktailDataSourceImplemententation()
+            let repository = RepositoryImpl(remoteDataSource: remoteDataSource)
+            RootView()
+                .environmentObject(RootViewModel(repository: repository))
+            
         }
     }
 }
