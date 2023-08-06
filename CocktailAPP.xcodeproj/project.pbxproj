@@ -94,10 +94,10 @@
 		630EE1D02A801C1700DA332B /* CocktailAPP */ = {
 			isa = PBXGroup;
 			children = (
-				630EE1D12A801C1700DA332B /* CocktailAPPApp.swift */,
-				630EE1D32A801C1700DA332B /* ContentView.swift */,
-				630EE1D52A801C1800DA332B /* Assets.xcassets */,
-				630EE1D72A801C1800DA332B /* Preview Content */,
+				630EE1FB2A801C9500DA332B /* Data */,
+				630EE1FC2A801C9F00DA332B /* Domain */,
+				630EE1FD2A801CA400DA332B /* Presentation */,
+				630EE1FE2A801CAB00DA332B /* App */,
 			);
 			path = CocktailAPP;
 			sourceTree = "<group>";
@@ -125,6 +125,110 @@
 				630EE1EE2A801C1800DA332B /* CocktailAPPUITestsLaunchTests.swift */,
 			);
 			path = CocktailAPPUITests;
+			sourceTree = "<group>";
+		};
+		630EE1FB2A801C9500DA332B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				630EE2022A801D2C00DA332B /* Remote */,
+				630EE2012A801D1E00DA332B /* Mapper */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		630EE1FC2A801C9F00DA332B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				630EE2072A801D8F00DA332B /* Models */,
+				630EE2062A801D8C00DA332B /* Procotols */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		630EE1FD2A801CA400DA332B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				630EE1D32A801C1700DA332B /* ContentView.swift */,
+				630EE2002A801CE000DA332B /* Resources */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		630EE1FE2A801CAB00DA332B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				630EE1FF2A801CBB00DA332B /* Resources */,
+				630EE1D12A801C1700DA332B /* CocktailAPPApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		630EE1FF2A801CBB00DA332B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				630EE1D52A801C1800DA332B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		630EE2002A801CE000DA332B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				630EE1D72A801C1800DA332B /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		630EE2012A801D1E00DA332B /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		630EE2022A801D2C00DA332B /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				630EE2052A801D4C00DA332B /* Datasource */,
+				630EE2042A801D3A00DA332B /* Models */,
+				630EE2032A801D3600DA332B /* Protocols */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		630EE2032A801D3600DA332B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		630EE2042A801D3A00DA332B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		630EE2052A801D4C00DA332B /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		630EE2062A801D8C00DA332B /* Procotols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Procotols;
+			sourceTree = "<group>";
+		};
+		630EE2072A801D8F00DA332B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CocktailAPP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CocktailAPP/Presentation/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -445,7 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CocktailAPP/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CocktailAPP/Presentation/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
