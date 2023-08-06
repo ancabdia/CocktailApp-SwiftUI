@@ -13,7 +13,7 @@ import Foundation
 struct Cocktail: Identifiable {
     let id: String
     let name: String
-    let category: Category?
+    let category: Category
     let instructions: String?
     let photo: String?
     let ingredients: [String?]

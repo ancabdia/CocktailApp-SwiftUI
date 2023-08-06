@@ -28,6 +28,9 @@
 		630EE22F2A802A8700DA332B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 630EE22E2A802A8700DA332B /* Lottie */; };
 		630EE2322A802B0E00DA332B /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2312A802B0E00DA332B /* Lottie.swift */; };
 		630EE2342A802B5B00DA332B /* ShakerGestureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2332A802B5B00DA332B /* ShakerGestureHelper.swift */; };
+		630EE23A2A802CE400DA332B /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2392A802CE400DA332B /* CocktailDetailView.swift */; };
+		630EE23F2A802D4800DA332B /* ListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE23E2A802D4800DA332B /* ListComponent.swift */; };
+		630EE2412A802E2000DA332B /* TitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2402A802E2000DA332B /* TitleComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		630EE22B2A80263600DA332B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		630EE2312A802B0E00DA332B /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
 		630EE2332A802B5B00DA332B /* ShakerGestureHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakerGestureHelper.swift; sourceTree = "<group>"; };
+		630EE2392A802CE400DA332B /* CocktailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
+		630EE23E2A802D4800DA332B /* ListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListComponent.swift; sourceTree = "<group>"; };
+		630EE2402A802E2000DA332B /* TitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 		630EE1FD2A801CA400DA332B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				630EE2372A802CCA00DA332B /* CocktailDetail */,
 				630EE2302A802B0700DA332B /* Utils */,
 				630EE2292A80261800DA332B /* Home */,
 				630EE2122A80203100DA332B /* Root */,
@@ -302,6 +309,24 @@
 				630EE2332A802B5B00DA332B /* ShakerGestureHelper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		630EE2372A802CCA00DA332B /* CocktailDetail */ = {
+			isa = PBXGroup;
+			children = (
+				630EE23D2A802D1D00DA332B /* Components */,
+				630EE2392A802CE400DA332B /* CocktailDetailView.swift */,
+			);
+			path = CocktailDetail;
+			sourceTree = "<group>";
+		};
+		630EE23D2A802D1D00DA332B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				630EE23E2A802D4800DA332B /* ListComponent.swift */,
+				630EE2402A802E2000DA332B /* TitleComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,12 +470,15 @@
 				630EE2162A80206A00DA332B /* RepositoryProtocol.swift in Sources */,
 				630EE2222A80243F00DA332B /* RepositoryImpl.swift in Sources */,
 				630EE2242A80246900DA332B /* Cocktail.swift in Sources */,
+				630EE23F2A802D4800DA332B /* ListComponent.swift in Sources */,
 				630EE21E2A80230800DA332B /* RemoteDataSourceProtocol.swift in Sources */,
 				630EE2102A801FD900DA332B /* SplashView.swift in Sources */,
 				630EE2142A80203B00DA332B /* RootViewModel.swift in Sources */,
 				630EE2342A802B5B00DA332B /* ShakerGestureHelper.swift in Sources */,
 				630EE22C2A80263600DA332B /* HomeViewModel.swift in Sources */,
 				630EE2202A80234400DA332B /* RemoteCocktail.swift in Sources */,
+				630EE2412A802E2000DA332B /* TitleComponent.swift in Sources */,
+				630EE23A2A802CE400DA332B /* CocktailDetailView.swift in Sources */,
 				630EE2282A80261200DA332B /* HomeView.swift in Sources */,
 				630EE21C2A8022D500DA332B /* RemoteCocktailDataSourceImpl.swift in Sources */,
 				630EE2322A802B0E00DA332B /* Lottie.swift in Sources */,
