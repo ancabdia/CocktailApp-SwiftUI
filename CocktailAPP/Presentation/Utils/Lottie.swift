@@ -9,9 +9,13 @@ import Lottie
 import SwiftUI
 
 struct LottieView: UIViewRepresentable {
-    //    let lottieFile: String
+    let lottieFile: String
+    let animationView : LottieAnimationView
     
-    let animationView = LottieAnimationView(name: "shaker.mp4.lottie")
+    init(lottieFile: String) {
+        self.lottieFile = lottieFile
+        animationView = LottieAnimationView(name: lottieFile)
+    }
     
     func makeUIView(context: Context) -> some UIView {
         

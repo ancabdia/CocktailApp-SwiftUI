@@ -12,6 +12,7 @@ enum Status {
     case loading
     case loaded
     case error(error: String)
+    case cocktailDetail(cocktail: Cocktail)
 }
 
 final class RootViewModel: ObservableObject {
@@ -22,6 +23,10 @@ final class RootViewModel: ObservableObject {
     
     init(repository: RepositoryProtocol) {
         self.repository = repository
+    }
+    
+    func showCocktailDetail(cocktail: Cocktail){
+        self.status = .cocktailDetail(cocktail: cocktail)
     }
     
     func onSplash() {

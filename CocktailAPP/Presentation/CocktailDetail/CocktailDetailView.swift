@@ -15,7 +15,7 @@ struct CocktailDetailView: View {
         self.cocktail = cocktail
     }
     
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    //    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         ZStack {
@@ -24,12 +24,12 @@ struct CocktailDetailView: View {
                 ListComponent(ingredients: cocktail.ingredients, measures: cocktail.measures)
             }
         }
-        .navigationBarTitle(cocktail.name) // Set navigation bar title
-        .navigationBarItems(leading: Button(action : {
-            self.mode.wrappedValue.dismiss()
-        }){
-            Image(systemName: "arrow.left")
-        })
+        //        .navigationBarTitle(cocktail.name) // Set navigation bar title
+        //        .navigationBarItems(leading: Button(action : {
+        //            self.mode.wrappedValue.dismiss()
+        //        }){
+        //            Image(systemName: "arrow.left")
+        //        })
     }
 }
 

@@ -29,6 +29,8 @@ struct RootView: View {
                 Label("RandomCocktail", systemImage: "wand.and.stars")
                 //arrow.2.circlepath.circle
             }
+        case Status.cocktailDetail(let cocktail):
+            CocktailDetailView(cocktail: cocktail)
         }
     }
 }
