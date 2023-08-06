@@ -20,9 +20,9 @@ struct SplashView: View {
                 .padding(EdgeInsets(top: 222, leading: 47, bottom: 578, trailing: 47))
         }
         .onAppear{
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//                rootViewModel.onSplash()
-//            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                rootViewModel.onSplash()
+            }
         }
         .background(
             Image(uiImage: UIImage(named: "background")!).ignoresSafeArea()
