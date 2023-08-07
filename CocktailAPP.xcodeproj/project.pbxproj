@@ -36,6 +36,7 @@
 		630EE2482A80C66B00DA332B /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */; };
 		630EE24B2A80CEF100DA332B /* CocktailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE24A2A80CEF100DA332B /* CocktailCellView.swift */; };
 		637F97402A80FC6B00FADC58 /* VideoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F973F2A80FC6B00FADC58 /* VideoComponent.swift */; };
+		637F97432A81246600FADC58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97422A81246600FADC58 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
 		630EE24A2A80CEF100DA332B /* CocktailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellView.swift; sourceTree = "<group>"; };
 		637F973F2A80FC6B00FADC58 /* VideoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComponent.swift; sourceTree = "<group>"; };
+		637F97422A81246600FADC58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		630EE1FD2A801CA400DA332B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				637F97412A81245500FADC58 /* Settings */,
 				630EE2442A80C54400DA332B /* CocktailsList */,
 				630EE2372A802CCA00DA332B /* CocktailDetail */,
 				630EE2302A802B0700DA332B /* Utils */,
@@ -360,6 +363,14 @@
 			path = CocktailCell;
 			sourceTree = "<group>";
 		};
+		637F97412A81245500FADC58 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				637F97422A81246600FADC58 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630EE2462A80C5EE00DA332B /* CocktailList.swift in Sources */,
+				637F97432A81246600FADC58 /* SettingsView.swift in Sources */,
 				630EE1D22A801C1700DA332B /* CocktailsApp.swift in Sources */,
 				630EE2262A8024AD00DA332B /* CocktailMapper.swift in Sources */,
 				630EE2162A80206A00DA332B /* RepositoryProtocol.swift in Sources */,

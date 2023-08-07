@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct CocktailsApp: App {
+    @AppStorage("appTheme") private var isDarkModeOn = false
+    
     var body: some Scene {
         WindowGroup {
             let remoteDataSource = RemoteCocktailDataSourceImplemententation()
             let repository = RepositoryImpl(remoteDataSource: remoteDataSource)
             RootView()
                 .environmentObject(RootViewModel(repository: repository))
+                .preferredColorScheme(isDarkModeOn ? .dark : .light)
             
         }
     }
