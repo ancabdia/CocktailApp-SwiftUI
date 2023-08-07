@@ -34,6 +34,10 @@ struct RootView: View {
                 CocktailList(cocktailViewModel: cocktailViewModel).tabItem{
                     Label("Cocktails", systemImage: "book")
                 }
+                
+                SettingsView().tabItem{
+                    Label("Settings", systemImage: "gearshape.fill")
+                }
             }
             
         case Status.cocktailDetail(let cocktail):
