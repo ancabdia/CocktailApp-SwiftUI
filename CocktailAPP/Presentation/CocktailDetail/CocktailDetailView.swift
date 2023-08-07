@@ -6,35 +6,34 @@
 //
 
 import SwiftUI
-import AVKit
 
 struct CocktailDetailView: View {
     var screenSize = UIScreen.main.bounds
     var cocktail: Cocktail
     
-    @State var player = AVPlayer(url: URL(string: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Video-Player/iMacAdvertisement.mp4")!) // 1
-    
     init(cocktail: Cocktail) {
         self.cocktail = cocktail
     }
     
-    //    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    
     var body: some View {
-        ZStack {
-            VStack {
-                TitleComponent(image: cocktail.photo ?? "none", title: cocktail.name, description: cocktail.instructions ?? "", category: cocktail.category)
-                ListComponent(ingredients: cocktail.ingredients, measures: cocktail.measures)
-                VideoPlayer(player: player)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                TitleComponent(image: cocktail.photo ?? "none", title: cocktail.name, description: cocktail.instructions!, category: cocktail.category)
+                Spacer()
+                Section {
+                    ListComponent(ingredients: cocktail.ingredients, measures: cocktail.measures)
+                }
+                Spacer()
+                if(cocktail.video != nil){
+                    Section{
+                        VideoComponent(video: cocktail.video ?? "" )
+                    }
+                }
             }
+            .padding()
         }
-        //        .navigationBarTitle(cocktail.name) // Set navigation bar title
-        //        .navigationBarItems(leading: Button(action : {
-        //            self.mode.wrappedValue.dismiss()
-        //        }){
-        //            Image(systemName: "arrow.left")
-        //        })
     }
+    
 }
 
 struct CocktailDetailView_Previews: PreviewProvider {

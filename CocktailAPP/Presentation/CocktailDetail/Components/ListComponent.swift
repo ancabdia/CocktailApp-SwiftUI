@@ -19,7 +19,11 @@ struct ListComponent: View {
     }
     
     var body: some View {
-        List {
+        VStack{
+            Text("Ingredients")
+                .font(.title2)
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
             ForEach(0..<max(ingredients.count, measures.count), id: \.self) { index in
                 let ingredient = index < ingredients.count ? ingredients[index] : nil
                 let measure = index < measures.count ? measures[index] : nil
@@ -62,14 +66,14 @@ struct ListComponent: View {
                     }
                 }
             }
-            .padding()
         }
-        .listStyle(.inset)
+        
+        .padding()
     }
 }
-
-struct List_Previews: PreviewProvider {
-    static var previews: some View {
-        ListComponent(ingredients: ["Vodka", "Orange Juice", "Jam", "Row"], measures: ["1 oz ", "3/4 oz "])
+    
+    struct List_Previews: PreviewProvider {
+        static var previews: some View {
+            ListComponent(ingredients: ["Vodka", "Orange Juice", "Jam", "Row"], measures: ["1 oz ", "3/4 oz "])
+        }
     }
-}
