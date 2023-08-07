@@ -34,6 +34,7 @@
 		630EE2432A8035BB00DA332B /* shaker.mp4.lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 630EE2422A8035BB00DA332B /* shaker.mp4.lottie.json */; };
 		630EE2462A80C5EE00DA332B /* CocktailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2452A80C5EE00DA332B /* CocktailList.swift */; };
 		630EE2482A80C66B00DA332B /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */; };
+		630EE24B2A80CEF100DA332B /* CocktailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE24A2A80CEF100DA332B /* CocktailCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		630EE2422A8035BB00DA332B /* shaker.mp4.lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shaker.mp4.lottie.json; sourceTree = "<group>"; };
 		630EE2452A80C5EE00DA332B /* CocktailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailList.swift; sourceTree = "<group>"; };
 		630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
+		630EE24A2A80CEF100DA332B /* CocktailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,10 +342,19 @@
 		630EE2442A80C54400DA332B /* CocktailsList */ = {
 			isa = PBXGroup;
 			children = (
+				630EE2492A80CEE200DA332B /* CocktailCell */,
 				630EE2452A80C5EE00DA332B /* CocktailList.swift */,
 				630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */,
 			);
 			path = CocktailsList;
+			sourceTree = "<group>";
+		};
+		630EE2492A80CEE200DA332B /* CocktailCell */ = {
+			isa = PBXGroup;
+			children = (
+				630EE24A2A80CEF100DA332B /* CocktailCellView.swift */,
+			);
+			path = CocktailCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,6 +504,7 @@
 				630EE23F2A802D4800DA332B /* ListComponent.swift in Sources */,
 				630EE21E2A80230800DA332B /* RemoteDataSourceProtocol.swift in Sources */,
 				630EE2102A801FD900DA332B /* SplashView.swift in Sources */,
+				630EE24B2A80CEF100DA332B /* CocktailCellView.swift in Sources */,
 				630EE2142A80203B00DA332B /* RootViewModel.swift in Sources */,
 				630EE2342A802B5B00DA332B /* ShakerGestureHelper.swift in Sources */,
 				630EE22C2A80263600DA332B /* HomeViewModel.swift in Sources */,

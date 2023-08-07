@@ -16,15 +16,17 @@ struct CocktailList: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(cocktailViewModel.cocktails) { cocktail in
+        NavigationView {
+            List(cocktailViewModel.cocktails) { cocktail in
+                NavigationLink{
                     CocktailDetailView(cocktail: cocktail)
+                } label: {
+                    CocktailCellView(cocktail: cocktail)
                 }
             }
-            .scrollContentBackground(.hidden) // Esconder el background
-            .navigationTitle("Cocktails") // Título de la lista
-            .navigationBarTitleDisplayMode(.inline) // Meter en el centro el título pequeño
+            .navigationTitle("Cocktails")
+            .navigationBarTitleDisplayMode(.inline)
+            .scrollContentBackground(.hidden)
         }
     }
 }
