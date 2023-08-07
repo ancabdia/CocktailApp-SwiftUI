@@ -25,10 +25,17 @@ struct RootView: View {
             
         case Status.loaded:
             let homeViewModel = HomeViewModel(repository: rootViewModel.repository)
-            HomeView(homeViewModel: homeViewModel).tabItem {
-                Label("RandomCocktail", systemImage: "wand.and.stars")
-                //arrow.2.circlepath.circle
+            let cocktailViewModel = CocktailListViewModel(repository: rootViewModel.repository)
+            TabView {
+                HomeView(homeViewModel: homeViewModel).tabItem {
+                    Label("RandomCocktail", systemImage: "wand.and.stars")
+                }
+                
+                CocktailList(cocktailViewModel: cocktailViewModel).tabItem{
+                    Label("Cocktails", systemImage: "book")
+                }
             }
+            
         case Status.cocktailDetail(let cocktail):
             CocktailDetailView(cocktail: cocktail)
         }

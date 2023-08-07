@@ -39,7 +39,7 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack {
                 Text("Cocktail of the day")
                     .textCase(.uppercase)
@@ -73,7 +73,7 @@ struct HomeView: View {
                                 }
                             }
                         if shaked && homeViewModel.cocktail != nil{
-                            NavigationLink("Titulo", destination: CocktailDetailView(cocktail: homeViewModel.cocktail!))
+                            NavigationLink("View cocktail", destination: CocktailDetailView(cocktail: homeViewModel.cocktail!))
                         }
                     }
                 }
