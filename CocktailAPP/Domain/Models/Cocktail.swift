@@ -10,7 +10,7 @@ import Foundation
 //https://www.thecocktaildb.com/images/ingredients/"strIngredientX.name"-"Size?".png
 //Size: Small, Medium
 
-struct Cocktail: Identifiable {
+struct Cocktail: Identifiable, Hashable {
     let id: String
     let name: String
     let category: Category

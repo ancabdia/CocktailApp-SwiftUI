@@ -36,18 +36,55 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
         
         //Fetch first RemoteCocktail
-        guard let remoteRandomCocktail = remoteDrinks.drinks.first else {
+        guard let remoteRandomCocktail = remoteDrinks.drinks?.first else {
             throw NetworkError.noData
         }
         
         return remoteRandomCocktail
     }
+    
+    func filterByName(cocktailName name: String) async throws -> [RemoteCocktail]? {
+        guard let url = getSessionCocktailsByName(cocktailName: name) else {
+            throw NetworkError.malformedURL
+        }
+        
+        // Obtain data from the call
+        let (data, _) = try await URLSession.shared.data(for: url)
+        
+        // Obtain remote Drink
+        let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
+        
+        //Fetch first RemoteCocktail
+        guard let remoteCocktails = remoteDrinks.drinks else {
+            throw NetworkError.noData
+        }
+        
+        return remoteCocktails
+    }
 }
 
 extension RemoteCocktailDataSourceImplemententation {
+    //www.thecocktaildb.com//api/json/v1/1/random.php
     func getSessionRandomCocktail() -> URLRequest? {
         // tratar los errores (THROWS y tratar en el punto del código deseado)
         guard let url = URL(string: "\(server)/\(apiEndpoint)/\(API_KEY)/random.php") else {
+            print(NetworkError.malformedURL)
+            return nil
+        }
+        
+        // URL request
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return urlRequest
+    }
+    
+    //www.thecocktaildb.com/api/json/v1/{{API_KEY}}/search.php?s=cocktailName
+    func getSessionCocktailsByName(cocktailName: String) -> URLRequest? {
+        // tratar los errores (THROWS y tratar en el punto del código deseado)
+        
+        guard let url = URL(string: "\(server)/\(apiEndpoint)/\(API_KEY)/search.php?s=\(cocktailName)") else {
             print(NetworkError.malformedURL)
             return nil
         }

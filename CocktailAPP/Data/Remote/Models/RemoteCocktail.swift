@@ -9,7 +9,7 @@ import Foundation
 // MARK: - DTO: RemoteCocktailsResponse
 ///Lista de cocktail recibido de la llamda JSON
 struct RemoteCocktailsResponse: Codable {
-    let drinks: [RemoteCocktail]
+    let drinks: [RemoteCocktail]?
 }
 
 // MARK: - DTO: RemoteCocktail

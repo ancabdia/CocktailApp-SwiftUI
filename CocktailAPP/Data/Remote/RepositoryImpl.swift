@@ -25,4 +25,11 @@ final class RepositoryImpl: RepositoryProtocol {
         let remoteCocktail: RemoteCocktail = try await remoteDataSource.getRandomCocktail()
         return CocktailMapper.mapRemoteOneCocktailToCocktail(remoteCocktail: remoteCocktail)
     }
+    
+    func filterByName(cocktailName name: String) async throws -> [Cocktail]? {
+        guard let remoteCocktails: [RemoteCocktail] = try await remoteDataSource.filterByName(cocktailName: name) else {
+            return nil
+        }
+        return CocktailMapper.mapRemoteCocktailsResponseToCocktails(remoteCocktails: remoteCocktails)
+    }
 }
