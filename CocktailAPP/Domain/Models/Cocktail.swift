@@ -13,6 +13,7 @@ import Foundation
 struct Cocktail: Identifiable, Hashable {
     let id: String
     let name: String
+    let video: String?
     let category: Category
     let instructions: String?
     let photo: String?

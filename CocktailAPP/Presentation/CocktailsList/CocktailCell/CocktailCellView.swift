@@ -57,6 +57,7 @@ struct CocktailCellView_Previews: PreviewProvider {
             cocktail: Cocktail(
                 id: "1",
                 name: "Sex on the beach",
+                video: "none",
                 category: .cocktail,
                 instructions: "Build all ingredients in a highball glass filled with ice. Garnish with orange slice.",
                 photo: "cocktail_image",

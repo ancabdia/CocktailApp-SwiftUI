@@ -15,7 +15,7 @@ final class CocktailListViewModel: ObservableObject {
         self.repository = repository
         DispatchQueue.main.async {
             Task {
-                guard let cocktailsRemote = try? await repository.filterByName(cocktailName: "Sex") else {
+                guard let cocktailsRemote = try? await repository.filterByName(cocktailName: "") else { //TODO: - Change this to a search field
                     self.cocktails = []
                     print("Unable to get cocktails from api")
                     return

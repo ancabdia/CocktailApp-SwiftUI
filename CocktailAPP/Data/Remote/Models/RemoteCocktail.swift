@@ -17,6 +17,7 @@ struct RemoteCocktailsResponse: Codable {
 struct RemoteCocktail: Codable {
     let idDrink: String
     let strDrink: String
+    let strVideo: String?
     let strCategory: String?
     let strInstructions: String?
     let strDrinkThumb: String?
