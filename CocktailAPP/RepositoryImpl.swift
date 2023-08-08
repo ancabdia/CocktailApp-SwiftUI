@@ -14,9 +14,28 @@ final class RepositoryImpl: RepositoryProtocol {
     //MARK: - Properties
     private let remoteDataSource: RemoteCocktailDataSourceProtocol
     
+    private let localDataSource: LocalDataSourceProtocol //nuevo protocol
+    
+    var cocktails: [Cocktail] = []
+    
     //MARK: - Init
-    init(remoteDataSource: RemoteCocktailDataSourceProtocol) {
+    init(remoteDataSource: RemoteCocktailDataSourceProtocol, localDataSource: LocalDataSourceProtocol) {
         self.remoteDataSource = remoteDataSource
+        self.localDataSource = localDataSource
+    }
+    
+    //implementar las funciones del Local
+    func addFavCocktail(cocktail: Cocktail) {
+        
+        cocktails.append(cocktail)
+        
+        localDataSource.saveFavCocktail(cocktail: cocktails.first!)
+    }
+    
+    func removeFavCocktail(cocktail: Cocktail) {
+        cocktails.removeAll { cocktailLocal in
+            cocktailLocal.id == cocktail.id
+        }
     }
     
     //MARK: - Methods from Domain Protocol

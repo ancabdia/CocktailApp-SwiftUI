@@ -63,7 +63,8 @@ struct CocktailCellView_Previews: PreviewProvider {
                 photo: "cocktail_image",
                 ingredients: ["Vodka", "Orange Juice", "Jam", "Row"],
                 measures: ["1 oz ", "3/4 oz "],
-                isAlcoholic: true
+                isAlcoholic: true,
+                isFavourite: false
             )
         )
     }

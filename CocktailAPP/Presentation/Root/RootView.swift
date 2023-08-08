@@ -41,7 +41,7 @@ struct RootView: View {
             }
             
         case Status.cocktailDetail(let cocktail):
-            CocktailDetailView(cocktail: cocktail)
+            let detailViewModel = DetailViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation()))
         }
     }
 }
@@ -49,7 +49,7 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
-            .environmentObject(RootViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation())))
+            .environmentObject(RootViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
     }
 }
 

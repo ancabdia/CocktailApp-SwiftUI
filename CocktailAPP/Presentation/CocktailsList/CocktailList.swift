@@ -23,7 +23,6 @@ struct CocktailList: View {
         cocktailViewModel.researchByName(cocktailName: searchCocktail)
         let temp_cocktails =  cocktailViewModel.cocktails.filter{$0.name.localizedCaseInsensitiveContains(searchCocktail)}
         return temp_cocktails.filter{ $0.isAlcoholic == isAlcoholic}
-        
     }
     
     var body: some View {
@@ -51,6 +50,6 @@ struct CocktailList: View {
 
 struct CocktailList_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailList(cocktailViewModel: CocktailListViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation())))
+        CocktailList(cocktailViewModel: CocktailListViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
     }
 }

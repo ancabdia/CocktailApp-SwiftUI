@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CocktailDetailView: View {
     var screenSize = UIScreen.main.bounds
+    
     var cocktail: Cocktail
     
     init(cocktail: Cocktail) {
@@ -18,7 +19,7 @@ struct CocktailDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                TitleComponent(image: cocktail.photo ?? "none", title: cocktail.name, description: cocktail.instructions!, category: cocktail.category)
+                TitleComponent(cocktail: cocktail, detailViewModel: DetailViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
                 Spacer()
                 Section {
                     ListComponent(ingredients: cocktail.ingredients, measures: cocktail.measures)
@@ -33,7 +34,6 @@ struct CocktailDetailView: View {
             .padding()
         }
     }
-    
 }
 
 struct CocktailDetailView_Previews: PreviewProvider {
@@ -48,9 +48,9 @@ struct CocktailDetailView_Previews: PreviewProvider {
                 photo: "cocktail_image",
                 ingredients: ["Vodka", "Orange Juice", "Jam", "Row"],
                 measures: ["1 oz ", "3/4 oz "],
-                isAlcoholic: true
-            )
-        )
+                isAlcoholic: true,
+                isFavourite: false
+            ))
     }
 }
 

@@ -14,7 +14,8 @@ struct CocktailsApp: App {
     var body: some Scene {
         WindowGroup {
             let remoteDataSource = RemoteCocktailDataSourceImplemententation()
-            let repository = RepositoryImpl(remoteDataSource: remoteDataSource)
+            let localDataSource = LocalDataSourceImplemententation()
+            let repository = RepositoryImpl(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
             RootView()
                 .environmentObject(RootViewModel(repository: repository))
                 .preferredColorScheme(isDarkModeOn ? .dark : .light)
