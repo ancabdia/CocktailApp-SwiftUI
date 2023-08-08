@@ -29,7 +29,7 @@ enum CocktailMapper{
         return Cocktail(id: cocktail.idDrink, name: cocktail.strDrink, video: cocktail.strVideo, category: Category(rawValue: cocktail.strCategory ?? "") ?? .other, instructions: cocktail.strInstructions, photo: cocktail.strDrinkThumb ?? "none", ingredients: ingredients, measures: measures, isAlcoholic: isAlcocoholic)
     }
     
-    static func mapRemoteCocktailsResponseToCocktails(remoteCocktails response: [RemoteCocktail]) -> [Cocktail] {
+    static func mapRemoteCocktailsToCocktails(remoteCocktails response: [RemoteCocktail]) -> [Cocktail] {
         return response.map{ remoteCocktail in
             
             var ingredients: [String] = []

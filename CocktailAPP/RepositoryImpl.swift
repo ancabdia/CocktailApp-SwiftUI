@@ -30,6 +30,6 @@ final class RepositoryImpl: RepositoryProtocol {
         guard let remoteCocktails: [RemoteCocktail] = try await remoteDataSource.filterByName(cocktailName: name) else {
             return nil
         }
-        return CocktailMapper.mapRemoteCocktailsResponseToCocktails(remoteCocktails: remoteCocktails)
+        return CocktailMapper.mapRemoteCocktailsToCocktails(remoteCocktails: remoteCocktails)
     }
 }

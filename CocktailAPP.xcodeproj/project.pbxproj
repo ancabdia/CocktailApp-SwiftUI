@@ -37,6 +37,7 @@
 		637F97402A80FC6B00FADC58 /* VideoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F973F2A80FC6B00FADC58 /* VideoComponent.swift */; };
 		637F97432A81246600FADC58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97422A81246600FADC58 /* SettingsView.swift */; };
 		637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97552A82152200FADC58 /* RemoteCocktailTests.swift */; };
+		637F975E2A821FAC00FADC58 /* CocktailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F975D2A821FAC00FADC58 /* CocktailMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		637F97422A81246600FADC58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		637F97442A82137300FADC58 /* CocktailAPP.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CocktailAPP.xctestplan; sourceTree = "<group>"; };
 		637F97552A82152200FADC58 /* RemoteCocktailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailTests.swift; sourceTree = "<group>"; };
+		637F975D2A821FAC00FADC58 /* CocktailMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				630EE1FB2A801C9500DA332B /* Data */,
+				630EE2212A80243F00DA332B /* RepositoryImpl.swift */,
 				630EE1FC2A801C9F00DA332B /* Domain */,
 				630EE1FD2A801CA400DA332B /* Presentation */,
 				630EE1FE2A801CAB00DA332B /* App */,
@@ -249,7 +252,6 @@
 				630EE2052A801D4C00DA332B /* Datasource */,
 				630EE2042A801D3A00DA332B /* Models */,
 				630EE2032A801D3600DA332B /* Protocols */,
-				630EE2212A80243F00DA332B /* RepositoryImpl.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -410,8 +412,8 @@
 		637F97492A82144000FADC58 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				637F97572A821C7B00FADC58 /* Datasource */,
 				637F97542A8214E400FADC58 /* Mapper */,
-				637F974B2A82144B00FADC58 /* Utils */,
 				637F974A2A82144500FADC58 /* Remote */,
 			);
 			path = Data;
@@ -423,13 +425,6 @@
 				637F97532A8214D200FADC58 /* Models */,
 			);
 			path = Remote;
-			sourceTree = "<group>";
-		};
-		637F974B2A82144B00FADC58 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		637F974C2A82145200FADC58 /* Presentation */ = {
@@ -497,8 +492,16 @@
 		637F97542A8214E400FADC58 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				637F975D2A821FAC00FADC58 /* CocktailMapperTests.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		637F97572A821C7B00FADC58 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637F975E2A821FAC00FADC58 /* CocktailMapperTests.swift in Sources */,
 				637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
