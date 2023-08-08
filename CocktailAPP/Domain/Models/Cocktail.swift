@@ -19,6 +19,7 @@ struct Cocktail: Identifiable, Hashable {
     let photo: String?
     let ingredients: [String?]
     let measures: [String?]
+    let isAlcoholic: Bool?
 }
 
 enum Category: String {

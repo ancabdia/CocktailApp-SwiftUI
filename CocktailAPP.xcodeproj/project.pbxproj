@@ -10,7 +10,6 @@
 		630EE1D22A801C1700DA332B /* CocktailsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE1D12A801C1700DA332B /* CocktailsApp.swift */; };
 		630EE1D62A801C1800DA332B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630EE1D52A801C1800DA332B /* Assets.xcassets */; };
 		630EE1D92A801C1800DA332B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630EE1D82A801C1800DA332B /* Preview Assets.xcassets */; };
-		630EE1E32A801C1800DA332B /* CocktailAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE1E22A801C1800DA332B /* CocktailAPPTests.swift */; };
 		630EE1ED2A801C1800DA332B /* CocktailAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE1EC2A801C1800DA332B /* CocktailAPPUITests.swift */; };
 		630EE1EF2A801C1800DA332B /* CocktailAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE1EE2A801C1800DA332B /* CocktailAPPUITestsLaunchTests.swift */; };
 		630EE2102A801FD900DA332B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE20F2A801FD900DA332B /* SplashView.swift */; };
@@ -37,6 +36,7 @@
 		630EE24B2A80CEF100DA332B /* CocktailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE24A2A80CEF100DA332B /* CocktailCellView.swift */; };
 		637F97402A80FC6B00FADC58 /* VideoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F973F2A80FC6B00FADC58 /* VideoComponent.swift */; };
 		637F97432A81246600FADC58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97422A81246600FADC58 /* SettingsView.swift */; };
+		637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97552A82152200FADC58 /* RemoteCocktailTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,6 @@
 		630EE1D52A801C1800DA332B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		630EE1D82A801C1800DA332B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		630EE1DE2A801C1800DA332B /* CocktailAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		630EE1E22A801C1800DA332B /* CocktailAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAPPTests.swift; sourceTree = "<group>"; };
 		630EE1E82A801C1800DA332B /* CocktailAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocktailAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630EE1EC2A801C1800DA332B /* CocktailAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAPPUITests.swift; sourceTree = "<group>"; };
 		630EE1EE2A801C1800DA332B /* CocktailAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -89,6 +88,8 @@
 		630EE24A2A80CEF100DA332B /* CocktailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellView.swift; sourceTree = "<group>"; };
 		637F973F2A80FC6B00FADC58 /* VideoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComponent.swift; sourceTree = "<group>"; };
 		637F97422A81246600FADC58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		637F97442A82137300FADC58 /* CocktailAPP.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CocktailAPP.xctestplan; sourceTree = "<group>"; };
+		637F97552A82152200FADC58 /* RemoteCocktailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCocktailTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +121,7 @@
 		630EE1C52A801C1700DA332B = {
 			isa = PBXGroup;
 			children = (
+				637F97442A82137300FADC58 /* CocktailAPP.xctestplan */,
 				630EE1D02A801C1700DA332B /* CocktailAPP */,
 				630EE1E12A801C1800DA332B /* CocktailAPPTests */,
 				630EE1EB2A801C1800DA332B /* CocktailAPPUITests */,
@@ -159,7 +161,8 @@
 		630EE1E12A801C1800DA332B /* CocktailAPPTests */ = {
 			isa = PBXGroup;
 			children = (
-				630EE1E22A801C1800DA332B /* CocktailAPPTests.swift */,
+				637F97452A82142100FADC58 /* Suts */,
+				637F974F2A82149D00FADC58 /* TestUtils */,
 			);
 			path = CocktailAPPTests;
 			sourceTree = "<group>";
@@ -338,8 +341,8 @@
 		630EE23D2A802D1D00DA332B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				630EE23E2A802D4800DA332B /* ListComponent.swift */,
 				630EE2402A802E2000DA332B /* TitleComponent.swift */,
+				630EE23E2A802D4800DA332B /* ListComponent.swift */,
 				637F973F2A80FC6B00FADC58 /* VideoComponent.swift */,
 			);
 			path = Components;
@@ -369,6 +372,133 @@
 				637F97422A81246600FADC58 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		637F97452A82142100FADC58 /* Suts */ = {
+			isa = PBXGroup;
+			children = (
+				637F974C2A82145200FADC58 /* Presentation */,
+				637F97492A82144000FADC58 /* Data */,
+				637F97472A82143200FADC58 /* Domain */,
+				637F97462A82142900FADC58 /* App */,
+			);
+			path = Suts;
+			sourceTree = "<group>";
+		};
+		637F97462A82142900FADC58 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		637F97472A82143200FADC58 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				637F97482A82143800FADC58 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		637F97482A82143800FADC58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		637F97492A82144000FADC58 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				637F97542A8214E400FADC58 /* Mapper */,
+				637F974B2A82144B00FADC58 /* Utils */,
+				637F974A2A82144500FADC58 /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		637F974A2A82144500FADC58 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				637F97532A8214D200FADC58 /* Models */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		637F974B2A82144B00FADC58 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		637F974C2A82145200FADC58 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				637F974E2A82145D00FADC58 /* CocktailDetail */,
+				637F974D2A82145B00FADC58 /* Home */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		637F974D2A82145B00FADC58 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		637F974E2A82145D00FADC58 /* CocktailDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CocktailDetail;
+			sourceTree = "<group>";
+		};
+		637F974F2A82149D00FADC58 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				637F97522A8214B400FADC58 /* Mocks */,
+				637F97512A8214AC00FADC58 /* Stubs */,
+				637F97502A8214A600FADC58 /* Spies */,
+			);
+			path = TestUtils;
+			sourceTree = "<group>";
+		};
+		637F97502A8214A600FADC58 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		637F97512A8214AC00FADC58 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		637F97522A8214B400FADC58 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		637F97532A8214D200FADC58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				637F97552A82152200FADC58 /* RemoteCocktailTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		637F97542A8214E400FADC58 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,7 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630EE1E32A801C1800DA332B /* CocktailAPPTests.swift in Sources */,
+				637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +747,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -671,7 +801,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -697,6 +827,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -726,6 +857,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -748,7 +880,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ancabdia.CocktailAPPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -768,7 +900,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ancabdia.CocktailAPPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -787,6 +919,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ancabdia.CocktailAPPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,6 +938,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44GU75538Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ancabdia.CocktailAPPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -47,7 +47,8 @@ struct CocktailDetailView_Previews: PreviewProvider {
                 instructions: "Build all ingredients in a highball glass filled with ice. Garnish with orange slice.",
                 photo: "cocktail_image",
                 ingredients: ["Vodka", "Orange Juice", "Jam", "Row"],
-                measures: ["1 oz ", "3/4 oz "]
+                measures: ["1 oz ", "3/4 oz "],
+                isAlcoholic: true
             )
         )
     }

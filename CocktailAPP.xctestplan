@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "03A4675D-689E-4D8F-BE4F-76B9FBAFC04D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CocktailAPP.xcodeproj",
+      "identifier" : "630EE1CD2A801C1700DA332B",
+      "name" : "CocktailAPP"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CocktailAPP.xcodeproj",
+        "identifier" : "630EE1DD2A801C1800DA332B",
+        "name" : "CocktailAPPTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CocktailAPP.xcodeproj",
+        "identifier" : "630EE1E72A801C1800DA332B",
+        "name" : "CocktailAPPUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

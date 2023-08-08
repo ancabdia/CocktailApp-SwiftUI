@@ -87,7 +87,6 @@ struct ListComponent: View {
                                 if let measure = measure {
                                     Text(measure)
                                         .font(Font.system(size: 12))
-                                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
                                 }
                             }
                             .frame(maxWidth: .infinity, alignment: .topLeading)

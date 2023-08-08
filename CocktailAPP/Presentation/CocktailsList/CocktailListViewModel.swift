@@ -32,7 +32,7 @@ final class CocktailListViewModel: ObservableObject {
         DispatchQueue.main.async {
             Task {
                 guard let cocktailsRemote = try? await self.repository.filterByName(cocktailName: cocktailName) else {
-                    self.cocktails = []
+//                    self.cocktails = []
                     print("Unable to get cocktails from api on researchByName")
                     return
                 }
