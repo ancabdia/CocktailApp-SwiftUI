@@ -23,4 +23,8 @@ final class DetailViewModel: ObservableObject {
         print("deleting cocktail from arrray")
         repository.removeFavCocktail(cocktail: cocktail)
     }
+    
+    func isFavourite(cocktailID: String) -> Bool{
+        repository.isFavourite(cocktailID: cocktailID)
+    }
 }

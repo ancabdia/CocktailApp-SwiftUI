@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LikedComponent: View {
+    @AppStorage("appTheme") private var isDarkModeOn = false
     
     private var liked: Bool
     
@@ -27,7 +28,7 @@ struct LikedComponent: View {
             .resizable()
             .frame(width: 25, height: 25)
             .padding()
-            .foregroundColor(.black)
+            .foregroundColor(isDarkModeOn ? .white : .black)
     }
 }
 

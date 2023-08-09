@@ -23,7 +23,9 @@ final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
     
     func removeFavCocktail(cocktailID: String){
         //remove cocktails with that ID
+        cocktails = readFavCocktails() ?? cocktails
         cocktails.removeAll(where: { $0.id == cocktailID })
+        saveFavCocktails()
     }
     
     private func saveFavCocktails(){
@@ -32,13 +34,13 @@ final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
     
     func isFavourite(cocktailID: String) -> Bool{
         //read
-        
+        let cocktailsReaded = readFavCocktails()
         //filtrado
+        let isFavor = cocktailsReaded?.contains(where: { cocktail in
+            cocktail.id == cocktailID
+        })
         
-        //return
-        
-        //TODO: - remove forced response
-        return true
+        return isFavor ?? false
     }
     
     func readFavCocktails() -> [Cocktail]? {

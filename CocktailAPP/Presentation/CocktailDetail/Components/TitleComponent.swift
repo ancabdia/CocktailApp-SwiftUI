@@ -14,11 +14,12 @@ struct TitleComponent: View {
     
     private var cocktail: Cocktail
     
-    @State private var liked = false
+    @State private var liked: Bool
     
     init(cocktail: Cocktail, detailViewModel: DetailViewModel) {
         self.cocktail = cocktail
         self.detailViewModel = detailViewModel
+        liked = detailViewModel.isFavourite(cocktailID: cocktail.id)
     }
     
     var body: some View {
@@ -51,8 +52,8 @@ struct TitleComponent: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Button(action: {
                         liked.toggle()
+                        liked ? detailViewModel.saveFav(cocktail: cocktail) : detailViewModel.deleteFav(cocktail: cocktail)
                         print("button clicked to save element")
-                        detailViewModel.saveFav(cocktail: cocktail)
                     }, label: {
                         HStack {
                             LikedComponent(liked: liked)
