@@ -23,7 +23,6 @@ struct TitleComponent: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            
             Image("placeholder") // Use your placeholder image name
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -63,10 +62,11 @@ struct TitleComponent: View {
                 Text(cocktail.category.rawValue)
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
-            }
+            }.padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
             Text(cocktail.instructions!)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
         }
-        .padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
     }
 }
 
