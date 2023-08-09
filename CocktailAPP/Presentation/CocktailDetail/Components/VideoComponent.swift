@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
-import AVKit
+import WebKit
+
+struct YouTubeView: UIViewRepresentable {
+    
+    let videoId: String
+    
+    func makeUIView(context: Context) ->  WKWebView {
+        return WKWebView()
+    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard let demoURL = URL(string: "https://www.youtube.com/embed/\(videoId)") else { return }
+        uiView.scrollView.isScrollEnabled = false
+        uiView.load(URLRequest(url: demoURL))
+    }
+}
 
 struct VideoComponent: View {
     var screenSize = UIScreen.main.bounds
-    @State private var player = AVPlayer()
     private var video: String?
     
     init(video: String) {
-        self.video = video
+        self.video = video.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
     }
 
     var body: some View {
@@ -23,12 +36,8 @@ struct VideoComponent: View {
                 .font(.title2)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-            VideoPlayer(player: player)
+            YouTubeView(videoId: video!)
                 .frame(height: 200)
-                .onAppear{
-                    player = AVPlayer(url: URL(string: video!)!)
-                }
-            Text(video!)
         }.padding()
     }
 }
