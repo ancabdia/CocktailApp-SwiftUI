@@ -8,16 +8,43 @@
 import Foundation
 
 final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
-
-    func saveFavCocktail(cocktail: Cocktail) {
-        UserDefaultsHelper.defaults.save(cocktail: cocktail)
-
-        if let savedCocktails = UserDefaultsHelper.defaults.readCocktails() {
-            print("Cocktail: \(savedCocktails.name), Category: \(cocktail.category.rawValue)")
-            
-        } else {
-            print("No saved cocktails found.")
-        }
+    
+    var cocktails: [Cocktail]
+    
+    init() {
+        self.cocktails = []
     }
     
+    func addFavCocktail(cocktail: Cocktail){
+        cocktails.append(cocktail)
+        saveFavCocktails()
+    }
+    
+    func removeFavCocktail(cocktailID: String){
+        //remove cocktails with that ID
+        cocktails.removeAll(where: { $0.id == cocktailID })
+    }
+    
+    private func saveFavCocktails(){
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(cocktails), forKey: "cocktails")
+    }
+    
+    func isFavourite(cocktailID: String) -> Bool{
+        //read
+        
+        //filtrado
+        
+        //return
+        
+        //TODO: - remove forced response
+        return true
+    }
+    
+    func readFavCocktails() -> [Cocktail]? {
+        if let data = UserDefaults.standard.value(forKey: "cocktails") as? Data {
+            let cocktailsSaved = try? PropertyListDecoder().decode(Array<Cocktail>.self, from: data)
+            return cocktailsSaved
+        }
+        return nil
+    }
 }

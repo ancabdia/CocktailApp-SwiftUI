@@ -12,7 +12,7 @@ struct CocktailList: View {
     @ObservedObject var cocktailViewModel: CocktailListViewModel
     @State private var searchCocktail: String = "" {
         didSet{
-            cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+            cocktailViewModel.getCocktail(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
         }
     }
     @State private var isAlcoholic: Bool = true
@@ -24,29 +24,37 @@ struct CocktailList: View {
     var body: some View {
         VStack{
             NavigationStack {
-                Toggle(isOn: $isAlcoholic) {
-                    Text("Alcoholic Drinks")
-                }.padding()
-                List(cocktailViewModel.cocktails) { cocktail in
-                    NavigationLink{
-                        CocktailDetailView(cocktail: cocktail)
-                    } label: {
-                        CocktailCellView(cocktail: cocktail)
+                if(!cocktailViewModel.errorText){
+                    Toggle(isOn: $isAlcoholic) {
+                        Text("Alcoholic Drinks")
+                    }.padding()
+                }
+                if (!cocktailViewModel.errorText) {
+                    List(cocktailViewModel.cocktails) { cocktail in
+                        NavigationLink{
+                            CocktailDetailView(cocktail: cocktail)
+                        } label: {
+                            CocktailCellView(cocktail: cocktail)
+                        }
                     }
+                    .navigationTitle("Cocktails")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .scrollContentBackground(.hidden)
+                    .searchable(text: $searchCocktail, placement: .automatic, prompt: "Search cocktails")
+                    .onChange(of: searchCocktail){ text in
+                        print("LLAMADA ON CHANGE con texto: \(text)")
+                        cocktailViewModel.getCocktail(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+                        
+                    }
+                    .onChange(of: isAlcoholic){ isAlcoholic in
+                        print("LLAMADA ON CHANGE con texto: \(isAlcoholic)")
+                        cocktailViewModel.getCocktail(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+                    }
+                }else{
+                    Label("The list has no data", systemImage: "person.fill.xmark")
+                        .searchable(text: $searchCocktail, placement: .automatic, prompt: "Search cocktails")
                 }
-                .navigationTitle("Cocktails")
-                .navigationBarTitleDisplayMode(.inline)
-                .scrollContentBackground(.hidden)
-                .searchable(text: $searchCocktail, placement: .automatic, prompt: "Search cocktails")
-                .onChange(of: searchCocktail){ text in
-                    print("LLAMADA ON CHANGE con texto: \(text)")
-                    cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
-                    
-                }
-                .onChange(of: isAlcoholic){ isAlcoholic in
-                    print("LLAMADA ON CHANGE con texto: \(isAlcoholic)")
-                    cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
-                }
+                
             }
         }
         

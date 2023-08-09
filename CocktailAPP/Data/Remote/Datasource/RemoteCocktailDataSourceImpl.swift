@@ -9,10 +9,11 @@ import Foundation
 
 enum NetworkError: Error, Equatable {
     case malformedURL
-    case noData
-    case noUser
+    case noConnection
+    case timeOut
     case errorCode(Int?)
     case decoding
+    case noData
     case other
 }
 
@@ -30,14 +31,14 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         }
         
         // Obtain data from the call
-        let (data, _) = try await URLSession.shared.data(for: url) //TODO: - refactor URLSession.shared por el session y extend URLSession creando el protocol networkFetching uno para async await y otro combine
+        let (data, error) = try await URLSession.shared.data(for: url) //TODO: - refactor URLSession.shared por el session y extend URLSession creando el protocol networkFetching uno para async await y otro combine
         
         // Obtain remote Drink
         let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
         
         //Fetch first RemoteCocktail
         guard let remoteRandomCocktail = remoteDrinks.drinks?.first else {
-            throw NetworkError.noData
+            throw error as! Error
         }
         
         return remoteRandomCocktail
@@ -49,17 +50,20 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         }
         
         // Obtain data from the call
-        let (data, _) = try await URLSession.shared.data(for: url)
-        
-        // Obtain remote Drink
-        let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
-        
-        //Fetch first RemoteCocktail
-        guard let remoteCocktails = remoteDrinks.drinks else {
-            throw NetworkError.noData
+        do{
+            let (data, _) = try await URLSession.shared.data(for: url)
+            // Obtain remote Drink
+            let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
+            
+            //Fetch first RemoteCocktail
+            guard let remoteCocktails = remoteDrinks.drinks else {
+                throw NetworkError.noData
+            }
+            
+            return remoteCocktails
+        } catch let error {
+            throw error
         }
-        
-        return remoteCocktails
     }
 }
 

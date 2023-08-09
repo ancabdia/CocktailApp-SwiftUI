@@ -13,5 +13,8 @@ import Foundation
 //save delete
 
 protocol LocalDataSourceProtocol{
-    func saveFavCocktail(cocktail: Cocktail)
+//    func saveFavCocktail(cocktail: Cocktail)
+    func addFavCocktail(cocktail: Cocktail)
+    func removeFavCocktail(cocktailID: String)
+    func readFavCocktails() -> [Cocktail]?
 }

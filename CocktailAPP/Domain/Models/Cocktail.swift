@@ -21,7 +21,7 @@ struct Cocktail: Identifiable, Hashable, Codable {
     let ingredients: [String?]
     let measures: [String?]
     let isAlcoholic: Bool?
-    let isFavourite: Bool
+//    let isFavourite: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, name, video, category, instructions, photo, ingredients, measures, isAlcoholic, isFavourite
@@ -37,7 +37,7 @@ struct Cocktail: Identifiable, Hashable, Codable {
         self.ingredients = ingredients
         self.measures = measures
         self.isAlcoholic = isAlcoholic
-        self.isFavourite = isFavourite
+//        self.isFavourite = isFavourite
     }
     
     init(from decoder: Decoder) throws {
@@ -50,7 +50,7 @@ struct Cocktail: Identifiable, Hashable, Codable {
         ingredients = try container.decode([String?].self, forKey: .ingredients)
         measures = try container.decode([String?].self, forKey: .measures)
         isAlcoholic = try container.decodeIfPresent(Bool.self, forKey: .isAlcoholic)
-        isFavourite = try container.decode(Bool.self, forKey: .isFavourite)
+//        isFavourite = try container.decode(Bool.self, forKey: .isFavourite)
         
         let rawCategory = try container.decode(String.self, forKey: .category)
         category = Category(rawValue: rawCategory) ?? .other
@@ -66,7 +66,7 @@ struct Cocktail: Identifiable, Hashable, Codable {
         try container.encode(ingredients, forKey: .ingredients)
         try container.encode(measures, forKey: .measures)
         try container.encode(isAlcoholic, forKey: .isAlcoholic)
-        try container.encode(isFavourite, forKey: .isFavourite)
+//        try container.encode(isFavourite, forKey: .isFavourite)
         try container.encode(category.rawValue, forKey: .category)
     }
 }

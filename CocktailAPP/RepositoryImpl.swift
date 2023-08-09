@@ -14,9 +14,7 @@ final class RepositoryImpl: RepositoryProtocol {
     //MARK: - Properties
     private let remoteDataSource: RemoteCocktailDataSourceProtocol
     
-    private let localDataSource: LocalDataSourceProtocol //nuevo protocol
-    
-    var cocktails: [Cocktail] = []
+    private let localDataSource: LocalDataSourceProtocol
     
     //MARK: - Init
     init(remoteDataSource: RemoteCocktailDataSourceProtocol, localDataSource: LocalDataSourceProtocol) {
@@ -26,16 +24,11 @@ final class RepositoryImpl: RepositoryProtocol {
     
     //implementar las funciones del Local
     func addFavCocktail(cocktail: Cocktail) {
-        
-        cocktails.append(cocktail)
-        
-        localDataSource.saveFavCocktail(cocktail: cocktails.first!)
+        localDataSource.addFavCocktail(cocktail: cocktail)
     }
     
     func removeFavCocktail(cocktail: Cocktail) {
-        cocktails.removeAll { cocktailLocal in
-            cocktailLocal.id == cocktail.id
-        }
+        localDataSource.removeFavCocktail(cocktailID: cocktail.id)
     }
     
     //MARK: - Methods from Domain Protocol
@@ -46,7 +39,7 @@ final class RepositoryImpl: RepositoryProtocol {
     }
     
     @MainActor
-    func getCocktails(cocktailName name: String = "", isAlcoholic: Bool? = nil) async -> [Cocktail]? {
+    func getCocktails(cocktailName name: String = "", isAlcoholic: Bool? = nil) async throws -> [Cocktail]? {
         do {
             let remoteCocktails: [RemoteCocktail] = try await remoteDataSource.getCocktailsByName(cocktailName: name) ?? []
             let cocktailsMapped:[Cocktail] =  CocktailMapper.mapRemoteCocktailsToCocktails(remoteCocktails: remoteCocktails)
@@ -61,9 +54,11 @@ final class RepositoryImpl: RepositoryProtocol {
                 return cocktailsMapped
             }
             
-        } catch {
-            print("error from server")
-            return nil
+        } catch let error {
+            switch error._code {
+            default:
+                throw DomainError.generalError //error general
+            }
         }
     }
 }
