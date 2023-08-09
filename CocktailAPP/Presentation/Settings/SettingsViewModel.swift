@@ -11,11 +11,14 @@ final class SettingsViewModel: ObservableObject {
     //MARK: Properties
     private let repository: RepositoryProtocol
     
+    @Published var favCocktails: [Cocktail] = []
+    
     init(repository: RepositoryProtocol){
         self.repository = repository
+        getFavCocktail()
     }
     
-    func getFavCocktail() -> [Cocktail]{
-        repository.getFavCocktails() ?? []
+    func getFavCocktail(){
+        favCocktails = repository.getFavCocktails() ?? favCocktails
     }
 }

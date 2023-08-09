@@ -20,13 +20,16 @@ struct SettingsView: View {
         VStack {
             Section{
                 NavigationStack{
-                    List(settingsViewModel.getFavCocktail()){ cocktail in
+                    List(settingsViewModel.favCocktails){ cocktail in
                         NavigationLink{
                             CocktailDetailView(cocktail: cocktail)
                         } label: {
                             CocktailCellView(cocktail: cocktail)
                         }
                     }.navigationBarTitle(Text("Favourite Cocktails"))
+                        .refreshable {
+                            settingsViewModel.getFavCocktail()
+                        }
                 }
             }
             Section {
