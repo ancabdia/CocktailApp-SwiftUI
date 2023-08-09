@@ -19,32 +19,12 @@ struct CocktailCellView: View {
         VStack(alignment: .leading, content: { // Para alinear al inicio
             HStack(content: { // Para el row
                 // Imagen
-                AsyncImage(url: URL(string: cocktail.photo ?? "none"),
-                           content: { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 130, height: 73)
-                },
-                           placeholder: {
-                    Image(cocktail.photo ?? "none")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 130, height: 73)
-                })
-                
-                
+                CellImageComponent(photo: cocktail.photo ?? "")
                 // Nombre y descripción alineados al principio
                 VStack (alignment: .leading, content: {
-                    Text(cocktail.name)
-                        .fontWeight(.semibold)
-                    //.font(.title3)
-                        .font(.system(size: 14))
-                    Text(cocktail.instructions ?? "none")
-                        .font(.system(size: 12))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(3)
+                    CellTitleComponent(name: cocktail.name, instructions: cocktail.instructions ?? "")
                 })
-                Spacer() // Spacer para apretar todo a la izquierda
+                Spacer() //Spacer para apretar todo a la izquierda
             })
         })
         

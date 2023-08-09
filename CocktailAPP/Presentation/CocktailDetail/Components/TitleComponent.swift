@@ -24,7 +24,7 @@ struct TitleComponent: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            Image("placeholder") // Use your placeholder image name
+            Image("placeholder")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenSize.width, height: 343)

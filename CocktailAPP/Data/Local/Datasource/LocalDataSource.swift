@@ -9,6 +9,8 @@ import Foundation
 
 final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
     
+    //https://stackoverflow.com/questions/44876420/save-struct-to-userdefaults
+    
     var cocktails: [Cocktail]
     
     init() {

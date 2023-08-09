@@ -7,8 +7,6 @@
 
 import SwiftUI
 struct SettingsView: View {
-    @AppStorage("appTheme") private var isDarkModeOn = false
-    
     @EnvironmentObject var rootViewModel: RootViewModel
     @ObservedObject var settingsViewModel: SettingsViewModel
     
@@ -18,25 +16,9 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
-            Section{
-                NavigationStack{
-                    List(settingsViewModel.favCocktails){ cocktail in
-                        NavigationLink{
-                            CocktailDetailView(cocktail: cocktail)
-                        } label: {
-                            CocktailCellView(cocktail: cocktail)
-                        }
-                    }.navigationBarTitle(Text("Favourite Cocktails"))
-                        .refreshable {
-                            settingsViewModel.getFavCocktail()
-                        }
-                }
-            }
-            Section {
-                Toggle(isOn: $isDarkModeOn) {
-                    Text("Switch to dark Mode")
-                }
-            }
+            FavouriteListComponent(settingsViewModel: settingsViewModel)
+            Divider()
+            SettingsComponents()
         }
     }
 }
