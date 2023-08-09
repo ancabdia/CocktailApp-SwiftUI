@@ -31,6 +31,10 @@ final class RepositoryImpl: RepositoryProtocol {
         localDataSource.removeFavCocktail(cocktailID: cocktail.id)
     }
     
+    func getFavCocktails() -> [Cocktail]? {
+        return localDataSource.readFavCocktails()
+    }
+    
     //MARK: - Methods from Domain Protocol
     func getRandomCocktail() async throws -> Cocktail {
         //Cocktail mapped

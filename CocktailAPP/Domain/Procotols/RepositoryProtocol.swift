@@ -10,6 +10,7 @@ protocol RepositoryProtocol {
     //añadir funciones del repositoryImpl
     func addFavCocktail(cocktail: Cocktail)
     func removeFavCocktail(cocktail: Cocktail)
+    func getFavCocktails() -> [Cocktail]?
     
     func getRandomCocktail() async throws -> Cocktail
     func getCocktails(cocktailName name: String, isAlcoholic: Bool?) async throws -> [Cocktail]?

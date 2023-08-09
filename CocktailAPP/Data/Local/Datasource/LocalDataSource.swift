@@ -12,10 +12,11 @@ final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
     var cocktails: [Cocktail]
     
     init() {
-        self.cocktails = []
+        cocktails = []
     }
     
     func addFavCocktail(cocktail: Cocktail){
+        cocktails = readFavCocktails() ?? cocktails
         cocktails.append(cocktail)
         saveFavCocktails()
     }

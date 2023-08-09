@@ -26,6 +26,7 @@ struct RootView: View {
         case Status.loaded:
             let homeViewModel = HomeViewModel(repository: rootViewModel.repository)
             let cocktailViewModel = CocktailListViewModel(repository: rootViewModel.repository)
+            let settingsViewModel = SettingsViewModel(repository: rootViewModel.repository)
             TabView {
                 HomeView(homeViewModel: homeViewModel).tabItem {
                     Label("RandomCocktail", systemImage: "wand.and.stars")
@@ -35,7 +36,7 @@ struct RootView: View {
                     Label("Cocktails", systemImage: "book")
                 }
                 
-                SettingsView().tabItem{
+                SettingsView(settingsViewModel: settingsViewModel).tabItem{
                     Label("Settings", systemImage: "gearshape.fill")
                 }
             }

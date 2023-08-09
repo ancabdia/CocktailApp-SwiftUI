@@ -6,24 +6,40 @@
 //
 
 import SwiftUI
-
 struct SettingsView: View {
     @AppStorage("appTheme") private var isDarkModeOn = false
     
+    @EnvironmentObject var rootViewModel: RootViewModel
+    @ObservedObject var settingsViewModel: SettingsViewModel
+    
+    init(settingsViewModel: SettingsViewModel) {
+        self.settingsViewModel = settingsViewModel
+    }
+    
     var body: some View {
         VStack {
+            Section{
+                NavigationStack{
+                    List(settingsViewModel.getFavCocktail()){ cocktail in
+                        NavigationLink{
+                            CocktailDetailView(cocktail: cocktail)
+                        } label: {
+                            CocktailCellView(cocktail: cocktail)
+                        }
+                    }.navigationBarTitle(Text("Favourite Cocktails"))
+                }
+            }
             Section {
                 Toggle(isOn: $isDarkModeOn) {
                     Text("Switch to dark Mode")
                 }
             }
-            Divider()
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(settingsViewModel: SettingsViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
     }
 }
