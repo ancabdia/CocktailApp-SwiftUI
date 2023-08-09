@@ -45,10 +45,25 @@ final class RepositoryImpl: RepositoryProtocol {
         return CocktailMapper.mapRemoteOneCocktailToCocktail(remoteCocktail: remoteCocktail)
     }
     
-    func filterByName(cocktailName name: String) async throws -> [Cocktail]? {
-        guard let remoteCocktails: [RemoteCocktail] = try await remoteDataSource.filterByName(cocktailName: name) else {
+    @MainActor
+    func getCocktails(cocktailName name: String = "", isAlcoholic: Bool? = nil) async -> [Cocktail]? {
+        do {
+            let remoteCocktails: [RemoteCocktail] = try await remoteDataSource.getCocktailsByName(cocktailName: name) ?? []
+            let cocktailsMapped:[Cocktail] =  CocktailMapper.mapRemoteCocktailsToCocktails(remoteCocktails: remoteCocktails)
+            
+            //filtrar por alcoholic lo que tienes en el View
+            if(isAlcoholic != nil){
+                let result:[Cocktail] = cocktailsMapped.filter{
+                    $0.isAlcoholic == isAlcoholic
+                }
+                return result
+            }else{
+                return cocktailsMapped
+            }
+            
+        } catch {
+            print("error from server")
             return nil
         }
-        return CocktailMapper.mapRemoteCocktailsToCocktails(remoteCocktails: remoteCocktails)
     }
 }

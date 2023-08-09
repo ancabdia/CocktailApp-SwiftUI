@@ -14,30 +14,16 @@ final class CocktailListViewModel: ObservableObject {
     
     init(repository: RepositoryProtocol) {
         self.repository = repository
-        DispatchQueue.main.async {
-            Task {
-                //By default search bar returns 10 first from API
-                guard let cocktailsRemote = try? await repository.filterByName(cocktailName: "") else {
-                    self.cocktails = []
-                    print("Unable to get cocktails from api")
-                    return
-                }
-                self.cocktails = cocktailsRemote
-            }
+        Task {
+            self.cocktails = await repository.getCocktails(cocktailName: "", isAlcoholic: nil) ?? []
         }
     }
     
     //Function to return the searched cocktails by name
-    func researchByName(cocktailName: String) {
-        DispatchQueue.main.async {
+    @MainActor
+    func researchByName(cocktailName: String, isAlcoholic: Bool?) {
             Task {
-                guard let cocktailsRemote = try? await self.repository.filterByName(cocktailName: cocktailName) else {
-//                    self.cocktails = []
-                    print("Unable to get cocktails from api on researchByName")
-                    return
-                }
-                self.cocktails = cocktailsRemote
+                self.cocktails = await repository.getCocktails(cocktailName: cocktailName, isAlcoholic: isAlcoholic) ?? cocktails
             }
-        }
     }
 }

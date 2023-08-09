@@ -13,6 +13,7 @@ final class UserDefaultsHelper {
     static let defaults = UserDefaultsHelper()
     private init() {}
     
+    //change to cocktails y hacer el stackOverflow
     func save(cocktail: Cocktail) {
             do {
                 let jsonData = try JSONEncoder().encode(cocktail)
@@ -39,60 +40,13 @@ final class UserDefaultsHelper {
     }
 }
 
+////Todo esto al localDataSource
+//struct cocktailHelper{
+//    cocktails: [Cocktail] = []
 //
 //
+//    func save to
 //
-//    func saveCocktails(favCocktails: [Cocktail]) {
-//        let serializedCocktails = favCocktails.map { cocktail in
-//            return serialize(cocktail)
-//        }
 //
-//        UserDefaults.standard.set(serializedCocktails, forKey: "cocktails")
-//        UserDefaults.standard.synchronize()
-//    }
-//
-//    func readCocktails() -> [Cocktail]? {
-//        if let savedData = UserDefaults.standard.array(forKey: "cocktails") as? [[String: Any]] {
-//            return savedData.compactMap { data in
-//                return deserialize(data)
-//            }
-//        }
-//        return nil
-//    }
-    
-//
-//    //convert types
-//    private func serialize(_ cocktail: Cocktail) -> [String: Any] {
-//        var serialized: [String: Any] = [:]
-//        serialized["id"] = cocktail.id
-//        serialized["name"] = cocktail.name
-//        serialized["category"] = cocktail.category.rawValue
-//        serialized["video"] = cocktail.video
-//        serialized["instructions"] = cocktail.instructions
-//        serialized["photo"] = cocktail.photo
-//        serialized["ingredients"] = cocktail.ingredients
-//        serialized["measures"] = cocktail.measures
-//        serialized["isAlcoholic"] = cocktail.isAlcoholic
-//        serialized["isFavourite"] = cocktail.isFavourite
-//
-//        return serialized
-//    }
-//
-//    private func deserialize(_ data: [String: Any]) -> Cocktail? {
-//        guard let id = data["id"] as? String,
-//              let name = data["name"] as? String,
-//              let video = data["video"] as? String,
-//              let category = data["category"] as? Category,
-//              let instructions = data["instructions"] as? String,
-//              let photo = data["photo"] as? String,
-//              let ingredients = data["ingredients"] as? [String?],
-//              let measures = data["measures"] as? [String?],
-//              let isAlcoholic = data["isAlcoholic"] as? Bool,
-//              let isFavourite = data["isFavourite"] as? Bool
-//        else {
-//            return nil
-//        }
-//
-//        return Cocktail(id: id, name: name, video: video, category: category, instructions: instructions, photo: photo, ingredients: ingredients, measures: measures, isAlcoholic: isAlcoholic, isFavourite: isFavourite)
-//    }
+//    func delete from
 //}

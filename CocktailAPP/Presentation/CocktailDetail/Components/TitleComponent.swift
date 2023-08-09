@@ -22,42 +22,51 @@ struct TitleComponent: View {
     }
     
     var body: some View {
-        AsyncImage(url: URL(string: cocktail.photo!),
-                   content: { image in
-            image.resizable()
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: screenSize.width, height: 343)
-                .clipped()
-        },
-                   placeholder: {
-            ProgressView()
-        })
-        
-        VStack(spacing: 24){
-            VStack{
-                HStack{
+        VStack(spacing: 24) {
+            
+            Image("placeholder") // Use your placeholder image name
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: screenSize.width, height: 343)
+                        .clipped()
+                        .accessibilityLabel("Image of \(cocktail.name)")
+                        .accessibilityValue(Text("Representation of a cocktail"))
+
+                        .overlay(
+                            AsyncImage(url: URL(string: cocktail.photo!)) { image in
+                                image.resizable()
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: screenSize.width, height: 343)
+                                    .clipped()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        )
+            
+            VStack {
+                HStack {
                     Text(cocktail.name)
                         .font(.largeTitle)
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Button(action: {
                         liked.toggle()
-                        print("boton cliclado guardar elemento")
+                        print("button clicked to save element")
                         detailViewModel.saveFav(cocktail: cocktail)
                     }, label: {
                         HStack {
                             LikedComponent(liked: liked)
                         }
                     })
-                    
                 }
                 Text(cocktail.category.rawValue)
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Text(cocktail.instructions!)
-        }.padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
+        }
+        .padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
     }
 }
 

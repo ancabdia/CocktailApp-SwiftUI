@@ -42,6 +42,7 @@ struct HomeView: View {
         NavigationStack{
             VStack {
                 Text("Cocktail of the day")
+                    .accessibilityHidden(true)
                     .textCase(.uppercase)
                     .font(.title)
                     .bold()
@@ -54,7 +55,14 @@ struct HomeView: View {
                                 self.timer = newTimer
                             }
                     }
+                    .accessibilityLabel("Creating the cocktail ... wait ... ")
                 } else {
+                    if shaked && homeViewModel.cocktail != nil{
+                        NavigationLink("View cocktail", destination: CocktailDetailView(cocktail: homeViewModel.cocktail!))
+                            .accessibilityHint("Navigate to the cocktail detail")
+//                            .accessibilityLabel("Navigate to the cocktail detail")
+                    }
+                    
                     VStack{
                         Text("Shake me!")
                             .bold()
@@ -72,9 +80,7 @@ struct HomeView: View {
 //                                    rootViewModel.showCocktailDetail(cocktail: homeViewModel.cocktail!)
                                 }
                             }
-                        if shaked && homeViewModel.cocktail != nil{
-                            NavigationLink("View cocktail", destination: CocktailDetailView(cocktail: homeViewModel.cocktail!))
-                        }
+                            .accessibilityLabel("Shake the phone to generate a random cocktail")
                     }
                 }
             }

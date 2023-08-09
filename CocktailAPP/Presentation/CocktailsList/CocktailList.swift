@@ -10,19 +10,15 @@ import SwiftUI
 struct CocktailList: View {
     @EnvironmentObject var rootViewModel: RootViewModel
     @ObservedObject var cocktailViewModel: CocktailListViewModel
-    @State private var searchCocktail: String = ""
+    @State private var searchCocktail: String = "" {
+        didSet{
+            cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+        }
+    }
     @State private var isAlcoholic: Bool = true
     
     init(cocktailViewModel: CocktailListViewModel) {
         self.cocktailViewModel = cocktailViewModel
-    }
-    
-    var filteredCocktails: [Cocktail] {
-        guard !searchCocktail.isEmpty else { return cocktailViewModel.cocktails }
-        //return new call to API with searchCocktail term as name
-        cocktailViewModel.researchByName(cocktailName: searchCocktail)
-        let temp_cocktails =  cocktailViewModel.cocktails.filter{$0.name.localizedCaseInsensitiveContains(searchCocktail)}
-        return temp_cocktails.filter{ $0.isAlcoholic == isAlcoholic}
     }
     
     var body: some View {
@@ -31,7 +27,7 @@ struct CocktailList: View {
                 Toggle(isOn: $isAlcoholic) {
                     Text("Alcoholic Drinks")
                 }.padding()
-                List(filteredCocktails) { cocktail in
+                List(cocktailViewModel.cocktails) { cocktail in
                     NavigationLink{
                         CocktailDetailView(cocktail: cocktail)
                     } label: {
@@ -41,7 +37,16 @@ struct CocktailList: View {
                 .navigationTitle("Cocktails")
                 .navigationBarTitleDisplayMode(.inline)
                 .scrollContentBackground(.hidden)
-                .searchable(text: $searchCocktail, placement: .automatic, prompt: "Seach cocktails")
+                .searchable(text: $searchCocktail, placement: .automatic, prompt: "Search cocktails")
+                .onChange(of: searchCocktail){ text in
+                    print("LLAMADA ON CHANGE con texto: \(text)")
+                    cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+                    
+                }
+                .onChange(of: isAlcoholic){ isAlcoholic in
+                    print("LLAMADA ON CHANGE con texto: \(isAlcoholic)")
+                    cocktailViewModel.researchByName(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
+                }
             }
         }
         

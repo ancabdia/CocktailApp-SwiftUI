@@ -43,7 +43,7 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         return remoteRandomCocktail
     }
     
-    func filterByName(cocktailName name: String) async throws -> [RemoteCocktail]? {
+    func getCocktailsByName(cocktailName name: String) async throws -> [RemoteCocktail]? {
         guard let url = getSessionCocktailsByName(cocktailName: name) else {
             throw NetworkError.malformedURL
         }
