@@ -29,8 +29,10 @@ struct TitleComponent: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: screenSize.width, height: 343)
                         .clipped()
+                        .accessibility(removeTraits: .isImage) //remove metadata description of image
                         .accessibilityLabel("Image of \(cocktail.name)")
                         .accessibilityValue(Text("Representation of a cocktail"))
+                        
 
                         .overlay(
                             AsyncImage(url: URL(string: cocktail.photo!)) { image in
