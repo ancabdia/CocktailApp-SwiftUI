@@ -32,7 +32,7 @@ struct LikedComponent: View {
             .padding()
             .foregroundColor(isDarkModeOn ? .white : .black)
             .accessibility(removeTraits: .isImage)
-            .accessibilityLabel("Add to your favurites cocktails")
+            .accessibilityLabel("Add to your favourite cocktails")
     }
 }
 
