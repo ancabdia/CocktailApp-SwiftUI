@@ -6,9 +6,6 @@
 //
 
 import Foundation
-import Combine
 protocol NetworkFetchingProtocol {
-
-    func load(fromRequest request: URLRequest) -> AnyPublisher<Data, Error>
     func data(url: URLRequest) async throws  -> (Data, URLResponse)
 }

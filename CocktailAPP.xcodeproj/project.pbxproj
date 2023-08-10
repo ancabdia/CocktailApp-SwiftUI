@@ -39,6 +39,10 @@
 		635F7C8A2A84CA8C00CF703F /* NetworkFetchingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C892A84CA8C00CF703F /* NetworkFetchingProtocol.swift */; };
 		635F7C8D2A84CB0600CF703F /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C8C2A84CB0600CF703F /* URLSession.swift */; };
 		635F7C8F2A84CBB200CF703F /* NetworkFetchingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C8E2A84CBB200CF703F /* NetworkFetchingMock.swift */; };
+		635F7C912A84E3AF00CF703F /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C902A84E3AF00CF703F /* SettingsViewModelTests.swift */; };
+		635F7C932A84E89000CF703F /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C922A84E89000CF703F /* DetailViewModelTests.swift */; };
+		635F7C992A84F38B00CF703F /* RepositoryImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C982A84F38B00CF703F /* RepositoryImplTests.swift */; };
+		635F7C9B2A84F81300CF703F /* LocalDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C9A2A84F81300CF703F /* LocalDataSourceTests.swift */; };
 		637F97402A80FC6B00FADC58 /* VideoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F973F2A80FC6B00FADC58 /* VideoComponent.swift */; };
 		637F97432A81246600FADC58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97422A81246600FADC58 /* SettingsView.swift */; };
 		637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97552A82152200FADC58 /* RemoteCocktailTests.swift */; };
@@ -111,6 +115,10 @@
 		635F7C892A84CA8C00CF703F /* NetworkFetchingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchingProtocol.swift; sourceTree = "<group>"; };
 		635F7C8C2A84CB0600CF703F /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		635F7C8E2A84CBB200CF703F /* NetworkFetchingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchingMock.swift; sourceTree = "<group>"; };
+		635F7C902A84E3AF00CF703F /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		635F7C922A84E89000CF703F /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		635F7C982A84F38B00CF703F /* RepositoryImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryImplTests.swift; sourceTree = "<group>"; };
+		635F7C9A2A84F81300CF703F /* LocalDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceTests.swift; sourceTree = "<group>"; };
 		637F973F2A80FC6B00FADC58 /* VideoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComponent.swift; sourceTree = "<group>"; };
 		637F97422A81246600FADC58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		637F97442A82137300FADC58 /* CocktailAPP.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CocktailAPP.xctestplan; sourceTree = "<group>"; };
@@ -415,16 +423,10 @@
 			path = CocktailCell;
 			sourceTree = "<group>";
 		};
-		635F7C832A84B83F00CF703F /* CocktailList */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CocktailList;
-			sourceTree = "<group>";
-		};
 		635F7C842A84B84700CF703F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				635F7C902A84E3AF00CF703F /* SettingsViewModelTests.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -486,6 +488,7 @@
 				637F97572A821C7B00FADC58 /* Datasource */,
 				637F97542A8214E400FADC58 /* Mapper */,
 				637F974A2A82144500FADC58 /* Remote */,
+				635F7C982A84F38B00CF703F /* RepositoryImplTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -502,7 +505,6 @@
 			isa = PBXGroup;
 			children = (
 				635F7C842A84B84700CF703F /* Settings */,
-				635F7C832A84B83F00CF703F /* CocktailList */,
 				637F974E2A82145D00FADC58 /* CocktailDetail */,
 				637F974D2A82145B00FADC58 /* Home */,
 			);
@@ -520,6 +522,7 @@
 		637F974E2A82145D00FADC58 /* CocktailDetail */ = {
 			isa = PBXGroup;
 			children = (
+				635F7C922A84E89000CF703F /* DetailViewModelTests.swift */,
 			);
 			path = CocktailDetail;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				635F7C872A84C8BC00CF703F /* RemoteDataSourceTests.swift */,
+				635F7C9A2A84F81300CF703F /* LocalDataSourceTests.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -835,8 +839,12 @@
 				635F7C862A84C87400CF703F /* URLProtocolMock.swift in Sources */,
 				637F975E2A821FAC00FADC58 /* CocktailMapperTests.swift in Sources */,
 				637F97642A822AE400FADC58 /* MockRepository.swift in Sources */,
+				635F7C932A84E89000CF703F /* DetailViewModelTests.swift in Sources */,
 				637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */,
 				637F97622A822AB900FADC58 /* HomeViewModelTests.swift in Sources */,
+				635F7C9B2A84F81300CF703F /* LocalDataSourceTests.swift in Sources */,
+				635F7C992A84F38B00CF703F /* RepositoryImplTests.swift in Sources */,
+				635F7C912A84E3AF00CF703F /* SettingsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
