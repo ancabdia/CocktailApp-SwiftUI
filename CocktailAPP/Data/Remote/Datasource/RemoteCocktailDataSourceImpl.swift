@@ -35,7 +35,7 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         }
         
         // Obtain data from the call
-        let (data, error) = try await session.data(url: url) //TODO: - refactor URLSession.shared por el session y extend URLSession creando el protocol networkFetching uno para async await y otro combine
+        let (data, error) = try await session.data(url: url)
         
         // Obtain remote Drink
         let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
