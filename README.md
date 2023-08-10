@@ -20,7 +20,7 @@ Dentro del mismo se han aplicado conocimientos de los distintos módulos de los 
 La finalidad de este proyecto será por lo tanto, crear una aplicación que mostrara a través del uso de la api de [enlace API](https://www.thecocktaildb.com/) una aplicación que constará de 5 pantallas, que nos permitirá visualizar la creación de cocktails, sus ingredientes, cantidades y descripción del mismo. Para ello podremos tanto generar cocktails de forma aleatoria, o a través de un buscador filtrar los resultados a mostrar.
 
 # Diseño de la app
-En cuanto al diseño de la misa, a través del siguiente [enlace]() se podrá visualizar el proceso de diseño y mockup de la aplicación la cual se realizo en las primeras fases del proceso del proyecto. Con el fin de planificar las HU y casos de uso a implementar, además de crear un diseño (UI/UX) que permita la navegación por la misma.
+En cuanto al diseño de la misa, a través del siguiente [enlace](https://www.figma.com/file/5tnJKBkseXvNR9YyYvTSIZ/Cocktails-APP?type=design&node-id=0%3A1&mode=design&t=weC67D9D0do84zlV-1) se podrá visualizar el proceso de diseño y mockup de la aplicación la cual se realizo en las primeras fases del proceso del proyecto. Con el fin de planificar las HU y casos de uso a implementar, además de crear un diseño (UI/UX) que permita la navegación por la misma.
 
 # Funcionalidades
 - Generar cocktail aleatorio del día
