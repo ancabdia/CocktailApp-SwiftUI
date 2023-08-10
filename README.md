@@ -114,8 +114,10 @@ En cuanto al diseño de la misa, a través del siguiente [enlace]() se podrá vi
 
 # MVVM
 
-## ¿Qué es MVVM?
+## ¿Qué es MVVM? [^1]
 Es un estandar de modelado de estructura de aplicaciones que consta de una serie de capas y fases que se comunican entre sí.
+
+[^1]: https://learn.microsoft.com/es-es/dotnet/architecture/maui/mvvm
 
 ### Model
 Las clases de modelo son clases no visuales que encapsulan los datos de la aplicación. Por lo tanto, el modelo se puede considerar como que representa el modelo de dominio de la aplicación, que normalmente incluye un modelo de datos junto con la lógica de validación y de negocios. Algunos ejemplos de objetos de modelo son objetos de transferencia de datos (DTO), objetos CLR antiguos sin formato (POCO) y objetos de entidad y proxy generados.
