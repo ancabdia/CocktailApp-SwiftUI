@@ -51,8 +51,11 @@ struct CocktailList: View {
                         cocktailViewModel.getCocktail(cocktailName: searchCocktail, isAlcoholic: isAlcoholic)
                     }
                 }else{
-                    Label("The list has no data", systemImage: "person.fill.xmark")
+                    Label("No data available.\nTap to regenerate", systemImage: "person.fill.xmark")
                         .searchable(text: $searchCocktail, placement: .automatic, prompt: "Search cocktails")
+                        .onTapGesture {
+                            cocktailViewModel.errorText.toggle()
+                        }
                 }
                 
             }
