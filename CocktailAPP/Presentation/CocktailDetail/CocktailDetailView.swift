@@ -45,7 +45,7 @@ struct CocktailDetailView_Previews: PreviewProvider {
                 video: "https://www.youtube.com/watch?v=ApMR3IWYZHI",
                 category: .cocktail,
                 instructions: "Build all ingredients in a highball glass filled with ice. Garnish with orange slice.",
-                photo: "cocktail_image",
+                photo: "https://www.thecocktaildb.com/images/media/drink/fi67641668420787.jpg",
                 ingredients: ["Vodka", "Orange Juice", "Jam", "Row"],
                 measures: ["1 oz ", "3/4 oz "],
                 isAlcoholic: true,

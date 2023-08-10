@@ -407,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				630EE2492A80CEE200DA332B /* CocktailCell */,
-				63D1F1762A841B570009E7A1 /* Components */,
 				630EE2452A80C5EE00DA332B /* CocktailList.swift */,
 				630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */,
 			);
@@ -627,13 +626,6 @@
 				63D1F1742A8418F60009E7A1 /* CellTitleComponent.swift */,
 			);
 			path = Componets;
-			sourceTree = "<group>";
-		};
-		63D1F1762A841B570009E7A1 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		63D1F17A2A841C220009E7A1 /* ListComponentUtils */ = {
