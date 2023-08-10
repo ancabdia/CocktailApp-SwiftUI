@@ -9,5 +9,4 @@ import Foundation
 protocol RemoteCocktailDataSourceProtocol {
     func getRandomCocktail() async throws -> RemoteCocktail
     func getCocktailsByName(cocktailName name: String) async throws -> [RemoteCocktail]?
-//    func getCocktailDetailById(idCocktail id: String) async throws -> RemoteCocktail
 }

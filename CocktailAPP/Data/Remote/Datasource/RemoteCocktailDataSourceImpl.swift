@@ -71,7 +71,7 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
     }
 }
 
-//Crear una clase que sea URLRequestHelper
+//TODO: Crear una clase que sea URLRequestHelper
 //-Protocol
 //-Impl
 //    getSessionRandomCocktail(session, server, apiEndopoint)
@@ -97,8 +97,6 @@ extension RemoteCocktailDataSourceImplemententation {
     
     //www.thecocktaildb.com/api/json/v1/{{API_KEY}}/search.php?s=cocktailName
     func getSessionCocktailsByName(cocktailName: String) -> URLRequest? {
-        // tratar los errores (THROWS y tratar en el punto del código deseado)
-        
         guard let url = URL(string: "\(server)/\(apiEndpoint)/\(API_KEY)/search.php?s=\(cocktailName)") else {
             print(NetworkError.malformedURL)
             return nil

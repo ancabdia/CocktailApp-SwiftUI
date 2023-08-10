@@ -16,7 +16,7 @@ struct HomeView: View {
     
     //MARK: - Variable for animation
     private let lottieView = LottieView(lottieFile: "shaker.mp4.lottie")
-    let arrayOfWords = ["Mezclando...", "Exprimiendo...", "Sirviendo..."]
+    let arrayOfWords = ["Mixing...", "Squeezing...", "Serving..."]
     @State private var currentIndex = 0
     @State var firstString : String = ""
     @State var timer: Timer? = nil

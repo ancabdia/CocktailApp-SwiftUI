@@ -65,7 +65,7 @@ final class RepositoryImpl: RepositoryProtocol {
         } catch let error {
             switch error._code {
             default:
-                throw DomainError.generalError //error general
+                throw DomainError.generalError
             }
         }
     }
