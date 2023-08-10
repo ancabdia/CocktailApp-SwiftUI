@@ -40,7 +40,7 @@ final class RepositoryImpl: RepositoryProtocol {
     }
     
     //MARK: - Methods from Domain Protocol
-    func getRandomCocktail() async throws -> Cocktail {
+    func getRandomCocktail() async throws -> Cocktail? {
         //Cocktail mapped
         let remoteCocktail: RemoteCocktail = try await remoteDataSource.getRandomCocktail()
         return CocktailMapper.mapRemoteOneCocktailToCocktail(remoteCocktail: remoteCocktail)

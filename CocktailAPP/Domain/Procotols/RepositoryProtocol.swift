@@ -13,7 +13,7 @@ protocol RepositoryProtocol {
     func getFavCocktails() -> [Cocktail]?
     func isFavourite(cocktailID: String) -> Bool
     
-    func getRandomCocktail() async throws -> Cocktail
+    func getRandomCocktail() async throws -> Cocktail?
     func getCocktails(cocktailName name: String, isAlcoholic: Bool?) async throws -> [Cocktail]?
 //    func getCocktailDetailById(idCocktail id: String) async throws-> Cocktail
 }

@@ -19,10 +19,14 @@ enum NetworkError: Error, Equatable {
 
 final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceProtocol {
     //MARK: - Properties
+    private let session: NetworkFetchingProtocol
     private let server: String = "https://www.thecocktaildb.com"
     private let API_KEY = 1
     private let apiEndpoint: String = "/api/json/v1/"
     
+    init(session: NetworkFetchingProtocol = URLSession.shared) {
+        self.session = session
+    }
     
     //https://www.thecocktaildb.com//api/json/v1/1/random.php
     func getRandomCocktail() async throws -> RemoteCocktail {
@@ -31,7 +35,7 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         }
         
         // Obtain data from the call
-        let (data, error) = try await URLSession.shared.data(for: url) //TODO: - refactor URLSession.shared por el session y extend URLSession creando el protocol networkFetching uno para async await y otro combine
+        let (data, error) = try await session.data(url: url) //TODO: - refactor URLSession.shared por el session y extend URLSession creando el protocol networkFetching uno para async await y otro combine
         
         // Obtain remote Drink
         let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
@@ -51,7 +55,7 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         
         // Obtain data from the call
         do{
-            let (data, _) = try await URLSession.shared.data(for: url)
+            let (data, _) = try await session.data(url: url)
             // Obtain remote Drink
             let remoteDrinks = try JSONDecoder().decode(RemoteCocktailsResponse.self, from: data)
             
@@ -66,6 +70,13 @@ final class RemoteCocktailDataSourceImplemententation: RemoteCocktailDataSourceP
         }
     }
 }
+
+//Crear una clase que sea URLRequestHelper
+//-Protocol
+//-Impl
+//    getSessionRandomCocktail(session, server, apiEndopoint)
+//
+//Mockear esa clase para dar error o no error
 
 extension RemoteCocktailDataSourceImplemententation {
     //www.thecocktaildb.com//api/json/v1/1/random.php

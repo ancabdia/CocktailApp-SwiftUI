@@ -34,6 +34,11 @@
 		630EE2462A80C5EE00DA332B /* CocktailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2452A80C5EE00DA332B /* CocktailList.swift */; };
 		630EE2482A80C66B00DA332B /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */; };
 		630EE24B2A80CEF100DA332B /* CocktailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EE24A2A80CEF100DA332B /* CocktailCellView.swift */; };
+		635F7C862A84C87400CF703F /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C852A84C87400CF703F /* URLProtocolMock.swift */; };
+		635F7C882A84C8BC00CF703F /* RemoteDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C872A84C8BC00CF703F /* RemoteDataSourceTests.swift */; };
+		635F7C8A2A84CA8C00CF703F /* NetworkFetchingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C892A84CA8C00CF703F /* NetworkFetchingProtocol.swift */; };
+		635F7C8D2A84CB0600CF703F /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C8C2A84CB0600CF703F /* URLSession.swift */; };
+		635F7C8F2A84CBB200CF703F /* NetworkFetchingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F7C8E2A84CBB200CF703F /* NetworkFetchingMock.swift */; };
 		637F97402A80FC6B00FADC58 /* VideoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F973F2A80FC6B00FADC58 /* VideoComponent.swift */; };
 		637F97432A81246600FADC58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97422A81246600FADC58 /* SettingsView.swift */; };
 		637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F97552A82152200FADC58 /* RemoteCocktailTests.swift */; };
@@ -101,6 +106,11 @@
 		630EE2452A80C5EE00DA332B /* CocktailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailList.swift; sourceTree = "<group>"; };
 		630EE2472A80C66B00DA332B /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
 		630EE24A2A80CEF100DA332B /* CocktailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailCellView.swift; sourceTree = "<group>"; };
+		635F7C852A84C87400CF703F /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		635F7C872A84C8BC00CF703F /* RemoteDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceTests.swift; sourceTree = "<group>"; };
+		635F7C892A84CA8C00CF703F /* NetworkFetchingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchingProtocol.swift; sourceTree = "<group>"; };
+		635F7C8C2A84CB0600CF703F /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		635F7C8E2A84CBB200CF703F /* NetworkFetchingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetchingMock.swift; sourceTree = "<group>"; };
 		637F973F2A80FC6B00FADC58 /* VideoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoComponent.swift; sourceTree = "<group>"; };
 		637F97422A81246600FADC58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		637F97442A82137300FADC58 /* CocktailAPP.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CocktailAPP.xctestplan; sourceTree = "<group>"; };
@@ -210,6 +220,7 @@
 		630EE1FB2A801C9500DA332B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				635F7C8B2A84CAFC00CF703F /* Extensions */,
 				6395EDBA2A824FF90061F72B /* Local */,
 				630EE2022A801D2C00DA332B /* Remote */,
 				630EE2012A801D1E00DA332B /* Mapper */,
@@ -313,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				630EE2152A80206A00DA332B /* RepositoryProtocol.swift */,
+				635F7C892A84CA8C00CF703F /* NetworkFetchingProtocol.swift */,
 			);
 			path = Procotols;
 			sourceTree = "<group>";
@@ -403,6 +415,28 @@
 			path = CocktailCell;
 			sourceTree = "<group>";
 		};
+		635F7C832A84B83F00CF703F /* CocktailList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CocktailList;
+			sourceTree = "<group>";
+		};
+		635F7C842A84B84700CF703F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		635F7C8B2A84CAFC00CF703F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				635F7C8C2A84CB0600CF703F /* URLSession.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		637F97412A81245500FADC58 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +501,8 @@
 		637F974C2A82145200FADC58 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				635F7C842A84B84700CF703F /* Settings */,
+				635F7C832A84B83F00CF703F /* CocktailList */,
 				637F974E2A82145D00FADC58 /* CocktailDetail */,
 				637F974D2A82145B00FADC58 /* Home */,
 			);
@@ -516,6 +552,8 @@
 			isa = PBXGroup;
 			children = (
 				637F97632A822AE400FADC58 /* MockRepository.swift */,
+				635F7C852A84C87400CF703F /* URLProtocolMock.swift */,
+				635F7C8E2A84CBB200CF703F /* NetworkFetchingMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -539,6 +577,7 @@
 		637F97572A821C7B00FADC58 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				635F7C872A84C8BC00CF703F /* RemoteDataSourceTests.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -771,6 +810,8 @@
 				6395EDC12A8250910061F72B /* LocalDataSourceProtocol.swift in Sources */,
 				63D1F17C2A841C5E0009E7A1 /* MyDisclosureStyle.swift in Sources */,
 				630EE22C2A80263600DA332B /* HomeViewModel.swift in Sources */,
+				635F7C8D2A84CB0600CF703F /* URLSession.swift in Sources */,
+				635F7C8A2A84CA8C00CF703F /* NetworkFetchingProtocol.swift in Sources */,
 				630EE2202A80234400DA332B /* RemoteCocktail.swift in Sources */,
 				630EE2412A802E2000DA332B /* TitleComponent.swift in Sources */,
 				630EE23A2A802CE400DA332B /* CocktailDetailView.swift in Sources */,
@@ -789,6 +830,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635F7C882A84C8BC00CF703F /* RemoteDataSourceTests.swift in Sources */,
+				635F7C8F2A84CBB200CF703F /* NetworkFetchingMock.swift in Sources */,
+				635F7C862A84C87400CF703F /* URLProtocolMock.swift in Sources */,
 				637F975E2A821FAC00FADC58 /* CocktailMapperTests.swift in Sources */,
 				637F97642A822AE400FADC58 /* MockRepository.swift in Sources */,
 				637F97562A82152200FADC58 /* RemoteCocktailTests.swift in Sources */,
@@ -949,8 +993,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -982,8 +1027,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
