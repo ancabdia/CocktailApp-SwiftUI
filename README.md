@@ -5,15 +5,12 @@
 - [Introducción](#Introducción)
 - [Diseño de la app](#figma)
 - [Funcionalidades]()
-- [MV](#mv)
-  - [¿Qué es MVVM?]()
-  - [Como funciona]()
-  - [MVVM y SwiftUI]()
-  - [MV y SwiftUI]()
-  - [Repositorio]()
-- [Código de estilo]()
-- [Otras herramientas]()
-- [Instrucciones de uso]()
+- [Historias de usuario]()
+- [MVVM](#mv)
+  - [Model]()
+  - [View]()
+  - [ViewModel]()
+- [Manual de uso](#manual)
 
 # Introducción
 Este proyecto tiene como objetivo aplicar los contenidos impartidos durante la formación por parte del bootcamp recibido por parte de OpenBank durante el periodo de julio y agosto. 
@@ -37,60 +34,105 @@ En cuanto al diseño de la misa, a través del siguiente [enlace]() se podrá vi
     - Imagén
     - Nombre
     - Cantidad oz/ml
+  - Botón de añadir a favorito
+- Consultar lista de cocktails favoritos
+- Modificar el tema entre claro y oscuro de la aplicación
 
-## Casos de uso
+## Historias de Usuario (HU)
 
-### CU-01
-| CU-01 | Generar cocktail aleatorio |
+### HU-01
+| HU-01 | Generar cocktail aleatorio |
 | ----------- | ----------- |
 | Objetivo | Permitir generar un cocktail de forma aleatoria al iniciar la app |
 | Requisito | Haber iniciado la app |
 | Descripción | Una vez se habrá la app se permitira ya sea haciendo clic o activando el evento de shake del iPhone se generará un cocktail de forma aleatoria al usuario   |
 | Condiciones | NAN   |
 
-### CU-02
-| CU-02 | Generar otro cocktail aleatorio |
+### HU-02
+| HU-02 | Generar x cocktails aleatorios |
 | ----------- | ----------- |
 | Objetivo | Permitir generar un nuevo cocktail de forma aleatoria |
 | Requisito | Haber iniciado la app y generado un cocktail previo |
 | Descripción | Una vez se haya generado un cocktail de forma aleatoria, se podrá volver a generar otro nuevo   |
 | Condiciones | Haber generado un cocktail random previamente   |
 
-### CU-03
-| CU-03 | Navegar entre vistas cocktail random y cocktails |
+### HU-03
+| HU-03 | Navegar entre vistas cocktail random y cocktails |
 | ----------- | ----------- |
 | Objetivo | Permitir navegar a otras vistas de la app |
 | Requisito | Haber iniciado la app |
 | Descripción | El usuario podrá navegar en la app entre sus distintas secciones   |
 | Condiciones | NAN   |
 
-
-### CU-04
-| CU-04 | Buscar cocktail por nombre |
+### HU-04
+| HU-04 | Buscar cocktail por nombre |
 | ----------- | ----------- |
 | Objetivo | Permitir buscar un cocktail mediante su nombre |
 | Requisito | Haber iniciado la app |
 | Descripción | El usuario podra usar un buscador para encontrar un cocktail mediante su nombre  |
 | Condiciones | Escribir algún nombre correcto   |
 
-### CU-05
-| CU-05 | Visualizar detalle de un cocktail |
+### HU-05
+| HU-05 | Visualizar detalle de un cocktail |
 | ----------- | ----------- |
 | Objetivo | Permitir visualizar el detalle de un cocktail |
 | Requisito | Haber iniciado la app y buscado un cocktail concreto a consultar |
 | Descripción | Una vez se haya buscado un cockail concreto se podrá hacer clic sobre el mismo y se generará una vista del mismo con el detalle   |
 | Condiciones | Incluir: imagen, nombre, descripción e ingredientes y cantidades del cocktail determinado   |
 
-### CU-06
-| CU-06 | Conversor de oz a ml |
+### HU-06
+| HU-06 | Añadir a favorito |
 | ----------- | ----------- |
-| Objetivo | Permitir convertir onzas a mililitros |
-| Requisito | Que el ingrediente disponga de una cantidad (oz) |
-| Descripción | Una vez se generé el cocktail se podrá visualizar la cantidad en onzas o ml   |
-| Condiciones | Disponer de un cocktail con cantidades de ingredientes   |
+| Objetivo | Permitir añadir un cocktail deseado a una lista de favoritos |
+| Requisito | Que el cocktail no este ya incluido en la lista |
+| Descripción | Una vez se generé el cocktail se podrá indicar si se quiere marcar o no   |
+| Condiciones | Disponer de un cocktail que visualizar   |
 
-# MV
+### HU-07
+| HU-07 | Eliminar de favorito |
+| ----------- | ----------- |
+| Objetivo | Permitir eliminar un cocktail deseado de una lista de favoritos |
+| Requisito | Que el cocktail este ya incluido en la lista |
+| Descripción | Una vez se generé el cocktail se podrá indicar si se quiere marcar o no   |
+| Condiciones | Disponer de un cocktail que visualizar y este ya en la lista de favoritos   |
 
-## ¿Qué es MV? [^1]
-[^1]: medium: https://betterprogramming.pub/swiftui-architecture-a-complete-guide-to-mv-pattern-approach-5f411eaaaf9e developer:https://developer.apple.com/forums/thread/699003
+### HU-08
+| HU-08 | Consultar lista de favoritos |
+| ----------- | ----------- |
+| Objetivo | Permitir visualizar cocktails marcados como favoritos |
+| Requisito | Que exista algun cocktail marcado |
+| Descripción | Una vez se incluya un cocktail se podra ver una lista recargable con los cocktails marcados   |
+| Condiciones | Disponer de un cocktail que visualizar y este ya en la lista de favoritos   |
 
+### HU-09
+| HU-09 | Modificar tema claro/oscuro |
+| ----------- | ----------- |
+| Objetivo | Permitir alternar entre modo claro y oscuro |
+| Requisito | NAN |
+| Descripción | Permitir ver la aplicación en modo claro o oscuro   |
+| Condiciones | Tener arrancada la aplicación   |
+
+# MVVM
+
+## ¿Qué es MVVM?
+Es un estandar de modelado de estructura de aplicaciones que consta de una serie de capas y fases que se comunican entre sí.
+
+### Model
+Las clases de modelo son clases no visuales que encapsulan los datos de la aplicación. Por lo tanto, el modelo se puede considerar como que representa el modelo de dominio de la aplicación, que normalmente incluye un modelo de datos junto con la lógica de validación y de negocios. Algunos ejemplos de objetos de modelo son objetos de transferencia de datos (DTO), objetos CLR antiguos sin formato (POCO) y objetos de entidad y proxy generados.
+
+Las clases de modelo se suelen usar junto con servicios o repositorios que encapsulan el acceso a datos y el almacenamiento en caché.
+
+### View
+La vista es responsable de definir la estructura, el diseño y la apariencia de lo que ve el usuario en la pantalla. Idealmente, con un código subyacente limitado que no contiene lógica de negocios. Sin embargo, en algunos casos, el código subyacente podría contener lógica de interfaz de usuario que implementa el comportamiento visual que es difícil de expresar como las animaciones.
+
+### ViewModel
+El modelo de vista implementa propiedades y comandos a los que la vista puede enlazar datos, y notifica a la vista los cambios de estado mediante eventos de notificación de cambios. Las propiedades y comandos que proporciona el modelo de vista definen la funcionalidad que ofrece la interfaz de usuario, pero la vista determina cómo se va a mostrar esa funcionalidad.
+
+![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
+
+## Manual de uso
+Una vez arrancada la aplicación podrá en la pantalla principal generar un cocktail de forma aleatoria y visualizar el detalle del mismo.
+
+En en el segundo tabItem podra realizar una busqueda a través del buscado y encontrar un cocktail deseado ya sea con alcohol o sin el mismo y de igual manera acceder al detalle del mismo.
+
+Por último en el menu de Settings podrá consultar los cocktails guardados como favoritos, realizando un refresh de la misma (arrastrando hacía abajo) podrá actualizar la vista de la misma. Finalmente en la parte inferior constará de un toogle botón donde podrá modificar la aparaciencia temática de la apliacición.
