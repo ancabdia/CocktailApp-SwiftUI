@@ -22,8 +22,8 @@ final class MockRespository: RepositoryProtocol {
         
         //populate cocktails
         self.cocktails = [
-            Cocktail(id: "1001", name: "Cocktail1", video: nil, category: Category.cocktail, instructions: "cocktail 1", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false),
-            Cocktail(id: "1002", name: "Cocktail2", video: nil, category: Category.ordinaryDrink, instructions: "cocktail 2", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+            Cocktail(id: "1001", name: "Cocktail1", video: nil, category: Category.cocktail, instructions: "cocktail 1", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false),
+            Cocktail(id: "1002", name: "Cocktail2", video: nil, category: Category.ordinaryDrink, instructions: "cocktail 2", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         ]
     }
     
@@ -39,7 +39,7 @@ final class MockRespository: RepositoryProtocol {
         return favCocktails
     }
     
-    func isFavourite(cocktailID: String) -> Bool {
+    func isFavorite(cocktailID: String) -> Bool {
         let isFavor = favCocktails?.contains(where: { cocktail in
             cocktail.id == cocktailID
         })

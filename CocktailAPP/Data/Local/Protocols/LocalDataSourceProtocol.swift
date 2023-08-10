@@ -17,5 +17,5 @@ protocol LocalDataSourceProtocol{
     func addFavCocktail(cocktail: Cocktail)
     func removeFavCocktail(cocktailID: String)
     func readFavCocktails() -> [Cocktail]?
-    func isFavourite(cocktailID: String) -> Bool
+    func isFavorite(cocktailID: String) -> Bool
 }

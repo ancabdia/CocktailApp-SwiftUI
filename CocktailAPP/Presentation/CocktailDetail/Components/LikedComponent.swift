@@ -23,12 +23,16 @@ struct LikedComponent: View {
             .frame(width: 25, height: 25)
             .padding()
             .foregroundColor(.red)
+            .accessibility(removeTraits: .isImage)
+            .accessibilityLabel("Remove from your favorites cocktails")
         :
         Image(systemName: "heart")
             .resizable()
             .frame(width: 25, height: 25)
             .padding()
             .foregroundColor(isDarkModeOn ? .white : .black)
+            .accessibility(removeTraits: .isImage)
+            .accessibilityLabel("Add to your favurites cocktails")
     }
 }
 

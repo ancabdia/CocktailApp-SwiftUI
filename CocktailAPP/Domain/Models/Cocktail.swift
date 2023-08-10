@@ -24,10 +24,10 @@ struct Cocktail: Identifiable, Hashable, Codable {
 //    let isFavourite: Bool
     
     enum CodingKeys: String, CodingKey {
-        case id, name, video, category, instructions, photo, ingredients, measures, isAlcoholic, isFavourite
+        case id, name, video, category, instructions, photo, ingredients, measures, isAlcoholic, isFavorite
     }
     
-    init(id: String, name: String, video: String?, category: Category, instructions: String?, photo: String?, ingredients: [String?], measures: [String?], isAlcoholic: Bool?, isFavourite: Bool) {
+    init(id: String, name: String, video: String?, category: Category, instructions: String?, photo: String?, ingredients: [String?], measures: [String?], isAlcoholic: Bool?, isFavorite: Bool) {
         self.id = id
         self.name = name
         self.video = video

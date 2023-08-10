@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavouriteListComponent: View {
+struct FavoriteListComponent: View {
     
     @ObservedObject var settingsViewModel: SettingsViewModel
     
@@ -20,7 +20,7 @@ struct FavouriteListComponent: View {
                     } label: {
                         CocktailCellView(cocktail: cocktail)
                     }
-                }.navigationBarTitle(Text("Favourite Cocktails"))
+                }.navigationBarTitle(Text("Favorite Cocktails"))
                     .refreshable {
                         settingsViewModel.getFavCocktail()
                     }
@@ -29,8 +29,8 @@ struct FavouriteListComponent: View {
     }
 }
 
-struct FavouriteListComponent_Previews: PreviewProvider {
+struct FavoriteListComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FavouriteListComponent(settingsViewModel: SettingsViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
+        FavoriteListComponent(settingsViewModel: SettingsViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
     }
 }

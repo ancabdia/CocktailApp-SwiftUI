@@ -26,7 +26,7 @@ enum CocktailMapper{
         
         let isAlcocoholic = cocktail.strAlcoholic == "Alcoholic" ? true : false
         
-        return Cocktail(id: cocktail.idDrink, name: cocktail.strDrink, video: cocktail.strVideo, category: Category(rawValue: cocktail.strCategory ?? "") ?? .other, instructions: cocktail.strInstructions, photo: cocktail.strDrinkThumb ?? "none", ingredients: ingredients, measures: measures, isAlcoholic: isAlcocoholic, isFavourite: false)
+        return Cocktail(id: cocktail.idDrink, name: cocktail.strDrink, video: cocktail.strVideo, category: Category(rawValue: cocktail.strCategory ?? "") ?? .other, instructions: cocktail.strInstructions, photo: cocktail.strDrinkThumb ?? "none", ingredients: ingredients, measures: measures, isAlcoholic: isAlcocoholic, isFavorite: false)
     }
     
     static func mapRemoteCocktailsToCocktails(remoteCocktails response: [RemoteCocktail]) -> [Cocktail] {
@@ -59,7 +59,7 @@ enum CocktailMapper{
                 ingredients: ingredients,
                 measures: measures,
                 isAlcoholic: isAlcocoholic,
-                isFavourite: false
+                isFavorite: false
             )
         }
     }

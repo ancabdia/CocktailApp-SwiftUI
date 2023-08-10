@@ -25,25 +25,25 @@ final class DetailViewModelTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testDetailViewModel_whenSavingFavouriteCocktail_succesful() async {
+    func testDetailViewModel_whenSavingFavoriteCocktail_succesful() async {
         //GIVEN
         let repo = MockRespository()
         sut = DetailViewModel(repository: repo)
         
         //WHEN
-        let cocktail = Cocktail(id: "1", name: "Cocktail", video: nil, category: Category.beer, instructions: "", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+        let cocktail = Cocktail(id: "1", name: "Cocktail", video: nil, category: Category.beer, instructions: "", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         
         sut?.saveFav(cocktail: cocktail)
         
         
         //THEN
-        XCTAssertNotNil(sut?.isFavourite(cocktailID: cocktail.id))
+        XCTAssertNotNil(sut?.isFavorite(cocktailID: cocktail.id))
     }
     
-    func testDetailViewModel_whenDeleteFavouriteCocktail_succesful() async {
+    func testDetailViewModel_whenDeleteFavoriteCocktail_succesful() async {
         //GIVEN
         let repo = MockRespository()
-        let cocktail = Cocktail(id: "1", name: "Cocktail", video: nil, category: Category.beer, instructions: "", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+        let cocktail = Cocktail(id: "1", name: "Cocktail", video: nil, category: Category.beer, instructions: "", photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         
         repo.addFavCocktail(cocktail: cocktail)
         
@@ -53,7 +53,7 @@ final class DetailViewModelTests: XCTestCase {
         sut?.deleteFav(cocktail: cocktail)
         
         //THEN
-        XCTAssertNotNil(sut?.isFavourite(cocktailID: cocktail.id))
+        XCTAssertNotNil(sut?.isFavorite(cocktailID: cocktail.id))
     }
 
 }

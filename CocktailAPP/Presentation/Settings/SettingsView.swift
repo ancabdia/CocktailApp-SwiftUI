@@ -16,7 +16,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
-            FavouriteListComponent(settingsViewModel: settingsViewModel)
+            FavoriteListComponent(settingsViewModel: settingsViewModel)
             Divider()
             SettingsComponents()
         }

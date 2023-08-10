@@ -34,7 +34,7 @@ final class LocalDataSourceImplemententation: LocalDataSourceProtocol {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(cocktails), forKey: "cocktails")
     }
     
-    func isFavourite(cocktailID: String) -> Bool{
+    func isFavorite(cocktailID: String) -> Bool{
         //read
         let cocktailsReaded = readFavCocktails()
         //filtrado

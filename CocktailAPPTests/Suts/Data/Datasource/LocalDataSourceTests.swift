@@ -25,7 +25,7 @@ final class LocalDataSourceTests: XCTestCase {
 
     func testLocalDataSource_whenAddFavCocktail_success() throws {
         //GIVEN
-        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         //WHEN
         localDataSource?.addFavCocktail(cocktail: cocktail)
         //THEN
@@ -35,7 +35,7 @@ final class LocalDataSourceTests: XCTestCase {
     
     func testRemoveFavCocktail_whenRemoveFavCocktail_success() {
         //GIVEN
-        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         localDataSource?.addFavCocktail(cocktail: cocktail)
         
         let cocktails = localDataSource?.readFavCocktails()
@@ -55,13 +55,13 @@ final class LocalDataSourceTests: XCTestCase {
         XCTAssertFalse(foundDelete!)
     }
     
-    func testIsFavouriteCocktail_whenIsFavourite_success() {
-        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavourite: false)
+    func testIsFavoriteCocktail_whenIsFavorite_success() {
+        let cocktail = Cocktail(id: "1", name: "Nombre del cocktail", video: nil, category: Category.beer, instructions: nil, photo: nil, ingredients: [], measures: [], isAlcoholic: nil, isFavorite: false)
         localDataSource?.addFavCocktail(cocktail: cocktail)
         
-        let isFavourite = localDataSource?.isFavourite(cocktailID: "1")
+        let isFavorite = localDataSource?.isFavorite(cocktailID: "1")
         
-        XCTAssertTrue(isFavourite!)
+        XCTAssertTrue(isFavorite!)
     }
 
 }

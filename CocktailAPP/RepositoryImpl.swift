@@ -35,8 +35,8 @@ final class RepositoryImpl: RepositoryProtocol {
         return localDataSource.readFavCocktails()
     }
     
-    func isFavourite(cocktailID: String) -> Bool {
-        return localDataSource.isFavourite(cocktailID: cocktailID)
+    func isFavorite(cocktailID: String) -> Bool {
+        return localDataSource.isFavorite(cocktailID: cocktailID)
     }
     
     //MARK: - Methods from Domain Protocol

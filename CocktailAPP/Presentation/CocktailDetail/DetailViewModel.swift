@@ -24,7 +24,7 @@ final class DetailViewModel: ObservableObject {
         repository.removeFavCocktail(cocktail: cocktail)
     }
     
-    func isFavourite(cocktailID: String) -> Bool{
-        repository.isFavourite(cocktailID: cocktailID)
+    func isFavorite(cocktailID: String) -> Bool{
+        repository.isFavorite(cocktailID: cocktailID)
     }
 }

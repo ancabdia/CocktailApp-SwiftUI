@@ -49,7 +49,7 @@ struct CocktailDetailView_Previews: PreviewProvider {
                 ingredients: ["Vodka", "Orange Juice", "Jam", "Row"],
                 measures: ["1 oz ", "3/4 oz "],
                 isAlcoholic: true,
-                isFavourite: false
+                isFavorite: false
             ))
     }
 }

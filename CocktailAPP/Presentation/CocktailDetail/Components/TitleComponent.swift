@@ -19,7 +19,7 @@ struct TitleComponent: View {
     init(cocktail: Cocktail, detailViewModel: DetailViewModel) {
         self.cocktail = cocktail
         self.detailViewModel = detailViewModel
-        liked = detailViewModel.isFavourite(cocktailID: cocktail.id)
+        liked = detailViewModel.isFavorite(cocktailID: cocktail.id)
     }
     
     var body: some View {
@@ -75,6 +75,6 @@ struct TitleComponent: View {
 
 struct TitleComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TitleComponent(cocktail: Cocktail(id: "10101", name: "Cocktail Mock", video: "https://youtube.com",category: Category.cocktail , instructions: "esta es la forma de preparar un cocktail", photo: "cocktail_image", ingredients: [], measures: [], isAlcoholic: true, isFavourite: false), detailViewModel: DetailViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
+        TitleComponent(cocktail: Cocktail(id: "10101", name: "Cocktail Mock", video: "https://youtube.com",category: Category.cocktail , instructions: "esta es la forma de preparar un cocktail", photo: "cocktail_image", ingredients: [], measures: [], isAlcoholic: true, isFavorite: false), detailViewModel: DetailViewModel(repository: RepositoryImpl(remoteDataSource: RemoteCocktailDataSourceImplemententation(), localDataSource: LocalDataSourceImplemententation())))
     }
 }

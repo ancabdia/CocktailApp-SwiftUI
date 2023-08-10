@@ -11,7 +11,7 @@ protocol RepositoryProtocol {
     func addFavCocktail(cocktail: Cocktail)
     func removeFavCocktail(cocktail: Cocktail)
     func getFavCocktails() -> [Cocktail]?
-    func isFavourite(cocktailID: String) -> Bool
+    func isFavorite(cocktailID: String) -> Bool
     
     func getRandomCocktail() async throws -> Cocktail?
     func getCocktails(cocktailName name: String, isAlcoholic: Bool?) async throws -> [Cocktail]?
