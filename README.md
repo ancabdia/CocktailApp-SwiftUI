@@ -1,5 +1,5 @@
 
-# Bienvenido a TheCocktailDB App
+# Bienvenido a TheCocktailDB App 🍹
 
 ### Contenido
 - [Introducción](#Introducción)
