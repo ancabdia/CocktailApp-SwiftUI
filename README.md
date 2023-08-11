@@ -151,6 +151,8 @@ Along while researching MVVM architecture i found out an interesting article ove
 
 More info can be found over: [article](https://betterprogramming.pub/swiftui-architecture-a-complete-guide-to-mv-pattern-approach-5f411eaaaf9e) and [WWDC Apple](https://developer.apple.com/videos/play/wwdc2020/10040/)
 
+Stop using MVVM with swiftUI: [link](https://developer.apple.com/forums/thread/699003)
+
 ## SwiftUI
 
 ### Async await [^2]
