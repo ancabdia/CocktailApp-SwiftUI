@@ -11,6 +11,7 @@
   - [Model]()
   - [View]()
   - [ViewModel]()
+  - [MV with SwiftUI](#newarch)
 - [SwiftUI](#swift)
   - [Async await]()
   - [Animations]()
@@ -127,7 +128,10 @@ Regarding the design of the mass, through the following [link](https://www.figma
 ## What is MVVM? [^1]
 It is an application structure modeling standard that consists of a series of layers and phases that communicate with each other.
 
+![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
+
 [^1]: https://learn.microsoft.com/es-es/dotnet/architecture/maui/mvvm
+
 
 ### Model
 Model classes are non-visual classes that encapsulate application data. Therefore, the model can be thought of as representing the application domain model, which typically includes a data model along with validation and business logic. Examples of model objects are data transfer objects (DTOs), plain old CLR objects (POCOs), and generated entity and proxy objects.
@@ -140,7 +144,12 @@ The view is responsible for defining the structure, layout and appearance of wha
 ### ViewModel
 The view model implements properties and commands to which the view can bind data, and notifies the view of state changes via change notification events. The properties and commands provided by the view model define the functionality provided by the user interface, but the view determines how that functionality is to be displayed.
 
-![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
+
+
+### MV with SwiftUI
+Along while researching MVVM architecture i found out an interesting article over using or not MVVM pattern along site with SwiftUI or using a new MV pattern. 
+
+More info can be found over: [article](https://betterprogramming.pub/swiftui-architecture-a-complete-guide-to-mv-pattern-approach-5f411eaaaf9e) and [WWDC Apple](https://developer.apple.com/videos/play/wwdc2020/10040/)
 
 ## SwiftUI
 
