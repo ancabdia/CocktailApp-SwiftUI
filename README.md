@@ -128,7 +128,8 @@ Regarding the design of the mass, through the following [link](https://www.figma
 ## What is MVVM? [^1]
 It is an application structure modeling standard that consists of a series of layers and phases that communicate with each other.
 
-![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
+![image](https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/f0f784c7-8b33-4249-b6f4-6e5b70487954)
+
 
 [^1]: https://learn.microsoft.com/es-es/dotnet/architecture/maui/mvvm
 
@@ -169,10 +170,11 @@ Await is the keyword to be used for calling async methods. You can see them as b
 ### Animations
 
 #### Shake animation
-https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/82b7371f-c7ce-4cf5-bed0-ce538c933865
+https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/bcc88682-e14c-4448-bf58-6b1757792616
 
 #### Refresh animation
-https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/dd8b47a9-05bc-4df8-a433-1f4b717f7593
+https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/ac5321bb-8944-4681-bae3-0862533a28c6
+
 
 ### UserDefaults
 [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) allows the user to save and read their favorite cocktails and show them over a list.
