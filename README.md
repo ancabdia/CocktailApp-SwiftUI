@@ -15,7 +15,7 @@
 # Introduction
 This project aims to apply the contents taught during the bootcamp training received by OpenBank during the period of July and August. 
 
-Within this project we have applied knowledge of the different modules that have been taught such as: version control **Git/GitHub**, **UX/UI** design, iOS programming using **SwiftUI** applying **clean architecture** through different calls to an **API**, testing using **XCTest** and applying accessibility to the project using **VoiceOver**.
+Within this project we have applied knowledge of the different modules that have been taught such as: version control **Git/GitHub**, **UX/UI** design, iOS programming using **SwiftUI** applying **clean architecture** through different calls to an **API**, testing using **XCTest** and applying **accessibility** to the project by using **VoiceOver** labels.
 
 The purpose of this project will be therefore, to create an application that will show through the use of the api of [API link](https://www.thecocktaildb.com/) an application that will consist of 5 screens, which will allow us to visualize the creation of cocktails, their ingredients, quantities and description of the same. To do this we can either generate cocktails randomly, or through a search engine filter the results to display.
 
