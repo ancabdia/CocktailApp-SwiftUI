@@ -11,6 +11,11 @@
   - [Model]()
   - [View]()
   - [ViewModel]()
+- [SwiftUI](#swift)
+  - [Async await]()
+  - [Animations]()
+  - [UserDefault]()
+  - [Accessibility]()
 - [User manual](#manual)
 
 # Introduction
@@ -136,6 +141,33 @@ The view is responsible for defining the structure, layout and appearance of wha
 The view model implements properties and commands to which the view can bind data, and notifies the view of state changes via change notification events. The properties and commands provided by the view model define the functionality provided by the user interface, but the view determines how that functionality is to be displayed.
 
 ![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
+
+## SwiftUI
+
+### Async await [^2]
+
+[^2]: https://www.avanderlee.com/swift/async-await/
+
+Async await is part of the new structured concurrency changes that arrived in **Swift 5.5** during WWDC 2021. Concurrency in Swift means allowing multiple pieces of code to run at the same time.
+
+Async stands for asynchronous and can be seen as a method attribute making it clear that a method performs asynchronous work.
+Async methods replace the often seen closure completion callbacks. Completion callbacks were common in Swift to return from an asynchronous task, often combined with a Result type parameter.
+
+Await is the keyword to be used for calling async methods. You can see them as best friends in Swift as one will never go without the other.
+
+### Animations
+
+#### Shake animation
+https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/82b7371f-c7ce-4cf5-bed0-ce538c933865
+
+#### Refresh animation
+https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/dd8b47a9-05bc-4df8-a433-1f4b717f7593
+
+### UserDefaults
+[UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) allows the user to save and read their favorite cocktails and show them over a list.
+
+### Accessibility
+Accessibility was implemented over DetailCocktailView, adding diffent types of label to the view fields so they currently describe the representation of what is showing over the screen.
 
 ## User's guide
 Once the application is started, you can randomly generate a cocktail in the main screen and visualize the details of the cocktail.
