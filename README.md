@@ -1,140 +1,140 @@
 
-# Bienvenido a TheCocktailDB App 🍹
+# Welcome to TheCocktailDB App 🍹
 
-### Contenido
-- [Introducción](#Introducción)
-- [Diseño de la app](#figma)
-- [Funcionalidades]()
-- [Historias de usuario]()
+## Contents
+- [Introduction](#Introduction)
+- [App Design](#figma)
+- [Functionalities]()
+- [User Stories]()
 - [MVVM](#mv)
   - [Model]()
   - [View]()
   - [ViewModel]()
-- [Manual de uso](#manual)
+- [User manual](#manual)
 
-# Introducción
-Este proyecto tiene como objetivo aplicar los contenidos impartidos durante la formación por parte del bootcamp recibido por parte de OpenBank durante el periodo de julio y agosto. 
+# Introduction
+This project aims to apply the contents taught during the bootcamp training received by OpenBank during the period of July and August. 
 
-Dentro del mismo se han aplicado conocimientos de los distintos módulos de los cuales se han impartido tales como: control de versiones **Git/GitHub**, diseño de **UX/UI**, programación iOS mediante **SwiftUI** aplicando **arquitectura clean** mediante distintas llamadas a una **API**, testing empleando **XCTest** y aplicando accesibilidad al proyecto mediante **VoiceOver**.
+Within this project we have applied knowledge of the different modules that have been taught such as: version control **Git/GitHub**, **UX/UI** design, iOS programming using **SwiftUI** applying **clean architecture** through different calls to an **API**, testing using **XCTest** and applying accessibility to the project using **VoiceOver**.
 
-La finalidad de este proyecto será por lo tanto, crear una aplicación que mostrara a través del uso de la api de [enlace API](https://www.thecocktaildb.com/) una aplicación que constará de 5 pantallas, que nos permitirá visualizar la creación de cocktails, sus ingredientes, cantidades y descripción del mismo. Para ello podremos tanto generar cocktails de forma aleatoria, o a través de un buscador filtrar los resultados a mostrar.
+The purpose of this project will be therefore, to create an application that will show through the use of the api of [API link](https://www.thecocktaildb.com/) an application that will consist of 5 screens, which will allow us to visualize the creation of cocktails, their ingredients, quantities and description of the same. To do this we can either generate cocktails randomly, or through a search engine filter the results to display.
 
-# Diseño de la app
-En cuanto al diseño de la misa, a través del siguiente [enlace](https://www.figma.com/file/5tnJKBkseXvNR9YyYvTSIZ/Cocktails-APP?type=design&node-id=0%3A1&mode=design&t=weC67D9D0do84zlV-1) se podrá visualizar el proceso de diseño y mockup de la aplicación la cual se realizo en las primeras fases del proceso del proyecto. Con el fin de planificar las HU y casos de uso a implementar, además de crear un diseño (UI/UX) que permita la navegación por la misma.
+# Design of the app
+Regarding the design of the mass, through the following [link](https://www.figma.com/file/5tnJKBkseXvNR9YyYvTSIZ/Cocktails-APP?type=design&node-id=0%3A1&mode=design&t=weC67D9D0do84zlV-1) you can view the design process and mockup of the application which was made in the early stages of the project process. In order to plan the HU and use cases to implement, in addition to creating a design (UI / UX) that allows navigation through it.
 
-# Funcionalidades
-- Generar cocktail aleatorio del día
-- Navegar entre vistas
-- Buscar cocktail por medio del nombre o partes del nombre
-- Ver el detalle de un cocktail
-  - Ver imagen del cocktail
-  - Ver título del cocktail
-  - Ver descricpión del cocktail
-  - Ver ingredientes del cocktail
-    - Imagén
-    - Nombre
-    - Cantidad oz/ml
-  - Botón de añadir a favorito
-- Consultar lista de cocktails favoritos
-- Modificar el tema entre claro y oscuro de la aplicación
+# Functionalities
+- Generate random cocktail of the day
+- Navigate between views
+- Search cocktail by name or parts of the name
+- View the detail of a cocktail
+  - View cocktail image
+  - View cocktail title
+  - View cocktail description
+  - View cocktail ingredients
+    - Image
+    - Cocktail name
+    - Amount oz/ml
+  - Add to favorite button
+- View list of favorite cocktails
+- Modify the theme between light and dark of the application
 
-## Historias de Usuario (HU)
+## User Stories (HU)
 
 ### HU-01
-| HU-01 | Generar cocktail aleatorio |
+| HU-01 | Generate random cocktail |
 | ----------- | ----------- |
-| Objetivo | Permitir generar un cocktail de forma aleatoria al iniciar la app |
-| Requisito | Haber iniciado la app |
-| Descripción | Una vez se habrá la app se permitira ya sea haciendo clic o activando el evento de shake del iPhone se generará un cocktail de forma aleatoria al usuario   |
-| Condiciones | NAN   |
+| Objective | Allow to generate a random cocktail at app startup |
+| Requirement | To have started the app. |
+| Description | Once the app is launched it will allow either clicking or activating the iPhone shake event to randomly generate a cocktail for the user. |
+| Conditions | NAN |
 
 ### HU-02
-| HU-02 | Generar x cocktails aleatorios |
+| HU-02 | Generate x random cocktails |
 | ----------- | ----------- |
-| Objetivo | Permitir generar un nuevo cocktail de forma aleatoria |
-| Requisito | Haber iniciado la app y generado un cocktail previo |
-| Descripción | Una vez se haya generado un cocktail de forma aleatoria, se podrá volver a generar otro nuevo   |
-| Condiciones | Haber generado un cocktail random previamente   |
+| Objective | Allow to generate a new cocktail randomly |
+| Requirement | To have started the app and generated a previous cocktail |
+| Description | Once a cocktail has been randomly generated, it is possible to generate a new cocktail again. |
+| Conditions | To have generated a random cocktail before |
 
 ### HU-03
-| HU-03 | Navegar entre vistas cocktail random y cocktails |
+| HU-03 | Navigating between cocktail random and cocktail views |
 | ----------- | ----------- |
-| Objetivo | Permitir navegar a otras vistas de la app |
-| Requisito | Haber iniciado la app |
-| Descripción | El usuario podrá navegar en la app entre sus distintas secciones   |
-| Condiciones | NAN   |
+| Objective | Allow to navigate to other app views |
+| Requirement | To have started the app |
+| Description | The user will be able to navigate in the app between the different sections of the app. |
+| Conditions | NAN |
 
 ### HU-04
-| HU-04 | Buscar cocktail por nombre |
+| HU-04 | Search cocktail by name |
 | ----------- | ----------- |
-| Objetivo | Permitir buscar un cocktail mediante su nombre |
-| Requisito | Haber iniciado la app |
-| Descripción | El usuario podra usar un buscador para encontrar un cocktail mediante su nombre  |
-| Condiciones | Escribir algún nombre correcto   |
+| Objective | Allow to search for a cocktail by name | | HU-04 | HU-04 | Search cocktail by name |
+| Requirement | To have started the app |
+| Description | The user will be able to use a search engine to find a cocktail by its name. |
+| Conditions | Enter a correct name |
 
 ### HU-05
-| HU-05 | Visualizar detalle de un cocktail |
+| HU-05 | Display cocktail details |
 | ----------- | ----------- |
-| Objetivo | Permitir visualizar el detalle de un cocktail |
-| Requisito | Haber iniciado la app y buscado un cocktail concreto a consultar |
-| Descripción | Una vez se haya buscado un cockail concreto se podrá hacer clic sobre el mismo y se generará una vista del mismo con el detalle   |
-| Condiciones | Incluir: imagen, nombre, descripción e ingredientes y cantidades del cocktail determinado   |
+| Objective | Display cocktail info |
+| Requirement | To have started the app and searched for a specific cocktail to consult |
+| Description | Once you have searched for a specific cocktail, you can click on it and it will generate a view of the cocktail with the detail | 
+| Conditions | Include: image, name, description, ingredients and quantities of the cocktail to be searched for |
 
-### HU-06
-| HU-06 | Añadir a favorito |
+## HU-06
+| HU-06 | Add to favorite |
 | ----------- | ----------- |
-| Objetivo | Permitir añadir un cocktail deseado a una lista de favoritos |
-| Requisito | Que el cocktail no este ya incluido en la lista |
-| Descripción | Una vez se generé el cocktail se podrá indicar si se quiere marcar o no   |
-| Condiciones | Disponer de un cocktail que visualizar   |
+| Objective | To add a desired cocktail to a favorite list |
+| Requirement | The cocktail must not already be included in the list. |
+| Description | Once the cocktail is generated, you can indicate whether you want to bookmark it or not.|
+| Conditions | You must have a cocktail to display.|
 
 ### HU-07
-| HU-07 | Eliminar de favorito |
+| HU-07 | Remove from favorite |
 | ----------- | ----------- |
-| Objetivo | Permitir eliminar un cocktail deseado de una lista de favoritos |
-| Requisito | Que el cocktail este ya incluido en la lista |
-| Descripción | Una vez se generé el cocktail se podrá indicar si se quiere marcar o no   |
-| Condiciones | Disponer de un cocktail que visualizar y este ya en la lista de favoritos   |
+| Objective | Allow to remove a desired cocktail from a list of favorites |
+| Requirement | The cocktail must already be included in the list. |
+| Description | Once the cocktail is generated, you can indicate whether you want to mark it or not. |
+| Conditions | You must have a cocktail to display and it must already be in the list of favorites. |
 
 ### HU-08
-| HU-08 | Consultar lista de favoritos |
+| HU-08 | Consult the list of favorites |
 | ----------- | ----------- |
-| Objetivo | Permitir visualizar cocktails marcados como favoritos |
-| Requisito | Que exista algun cocktail marcado |
-| Descripción | Una vez se incluya un cocktail se podra ver una lista recargable con los cocktails marcados   |
-| Condiciones | Disponer de un cocktail que visualizar y este ya en la lista de favoritos   |
+| Objective | To allow the display of cocktails marked as favorite |
+| Requirement | There must be a cocktail marked as a favorite cocktail. |
+| Description | Once a cocktail is included, a reloadable list with the marked cocktails will be displayed. |
+| Conditions | You must have a cocktail to display and it must already be in the list of favorites |
 
 ### HU-09
-| HU-09 | Modificar tema claro/oscuro |
+| HU-09 | Modify light/dark theme |
 | ----------- | ----------- |
-| Objetivo | Permitir alternar entre modo claro y oscuro |
-| Requisito | NAN |
-| Descripción | Permitir ver la aplicación en modo claro o oscuro   |
-| Condiciones | Tener arrancada la aplicación   |
+| Objetive | Allow toggle between light and dark mode |
+| Requirement | NAN |
+| Description | Enable to view the application in light or dark mode |
+| Conditions | Application must be started |
 
 # MVVM
 
-## ¿Qué es MVVM? [^1]
-Es un estandar de modelado de estructura de aplicaciones que consta de una serie de capas y fases que se comunican entre sí.
+## What is MVVM? [^1]
+It is an application structure modeling standard that consists of a series of layers and phases that communicate with each other.
 
 [^1]: https://learn.microsoft.com/es-es/dotnet/architecture/maui/mvvm
 
 ### Model
-Las clases de modelo son clases no visuales que encapsulan los datos de la aplicación. Por lo tanto, el modelo se puede considerar como que representa el modelo de dominio de la aplicación, que normalmente incluye un modelo de datos junto con la lógica de validación y de negocios. Algunos ejemplos de objetos de modelo son objetos de transferencia de datos (DTO), objetos CLR antiguos sin formato (POCO) y objetos de entidad y proxy generados.
+Model classes are non-visual classes that encapsulate application data. Therefore, the model can be thought of as representing the application domain model, which typically includes a data model along with validation and business logic. Examples of model objects are data transfer objects (DTOs), plain old CLR objects (POCOs), and generated entity and proxy objects.
 
-Las clases de modelo se suelen usar junto con servicios o repositorios que encapsulan el acceso a datos y el almacenamiento en caché.
+Model classes are often used in conjunction with services or repositories that encapsulate data access and caching.
 
 ### View
-La vista es responsable de definir la estructura, el diseño y la apariencia de lo que ve el usuario en la pantalla. Idealmente, con un código subyacente limitado que no contiene lógica de negocios. Sin embargo, en algunos casos, el código subyacente podría contener lógica de interfaz de usuario que implementa el comportamiento visual que es difícil de expresar como las animaciones.
+The view is responsible for defining the structure, layout and appearance of what the user sees on the screen. Ideally, with limited underlying code that contains no business logic. However, in some cases, the underlying code might contain user interface logic that implements visual behavior that is difficult to express such as animations.
 
 ### ViewModel
-El modelo de vista implementa propiedades y comandos a los que la vista puede enlazar datos, y notifica a la vista los cambios de estado mediante eventos de notificación de cambios. Las propiedades y comandos que proporciona el modelo de vista definen la funcionalidad que ofrece la interfaz de usuario, pero la vista determina cómo se va a mostrar esa funcionalidad.
+The view model implements properties and commands to which the view can bind data, and notifies the view of state changes via change notification events. The properties and commands provided by the view model define the functionality provided by the user interface, but the view determines how that functionality is to be displayed.
 
 ![image](https://github.com/ancabdia/iOS_Bootcamp_APP/assets/37101338/d9e04972-40dc-498e-acad-3bf0134e015c)
 
-## Manual de uso
-Una vez arrancada la aplicación podrá en la pantalla principal generar un cocktail de forma aleatoria y visualizar el detalle del mismo.
+## User's guide
+Once the application is started, you can randomly generate a cocktail in the main screen and visualize the details of the cocktail.
 
-En en el segundo tabItem podra realizar una busqueda a través del buscado y encontrar un cocktail deseado ya sea con alcohol o sin el mismo y de igual manera acceder al detalle del mismo.
+In the second tabItem you can search through the search and find a desired cocktail either with or without alcohol and also access the details of the same.
 
-Por último en el menu de Settings podrá consultar los cocktails guardados como favoritos, realizando un refresh de la misma (arrastrando hacía abajo) podrá actualizar la vista de la misma. Finalmente en la parte inferior constará de un toogle botón donde podrá modificar la aparaciencia temática de la apliacición.
+Finally in the Settings menu you will be able to consult the cocktails saved as favorites, by refreshing it (dragging downwards) you will be able to update the view of it. Finally, at the bottom there is a Google button where you can modify the thematic appearance of the application.
