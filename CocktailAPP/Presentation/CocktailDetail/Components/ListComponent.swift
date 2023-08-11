@@ -29,6 +29,7 @@ struct ListComponent: View {
                     }
                 }
             }.disclosureGroupStyle(MyDisclosureStyle())
+                .accessibilityValue(Text("List of ingredients"))
         }.padding()
     }
 }

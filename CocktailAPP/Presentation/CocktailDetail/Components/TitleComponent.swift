@@ -52,10 +52,10 @@ struct TitleComponent: View {
                         .font(.largeTitle)
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityValue(Text("Cocktail title"))
                     Button(action: {
                         liked.toggle()
                         liked ? detailViewModel.saveFav(cocktail: cocktail) : detailViewModel.deleteFav(cocktail: cocktail)
-                        print("button clicked to save element")
                     }, label: {
                         HStack {
                             LikedComponent(liked: liked)
@@ -65,10 +65,12 @@ struct TitleComponent: View {
                 Text(cocktail.category.rawValue)
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .accessibilityValue(Text("Cocktail category"))
             }.padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
             Text(cocktail.instructions!)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(EdgeInsets(top: 0, leading: 14, bottom: 0, trailing: 14))
+                .accessibilityValue(Text("Cocktail instructions"))
         }
     }
 }
