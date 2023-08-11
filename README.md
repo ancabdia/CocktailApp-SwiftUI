@@ -5,6 +5,7 @@
 - [Introduction](#Introduction)
 - [App Design](#figma)
 - [Functionalities]()
+- [Use Cases]()
 - [User Stories]()
 - [MVVM](#mv)
   - [Model]()
@@ -37,6 +38,10 @@ Regarding the design of the mass, through the following [link](https://www.figma
   - Add to favorite button
 - View list of favorite cocktails
 - Modify the theme between light and dark of the application
+
+## Use Cases (CU)
+![CUdiagram](https://github.com/ancabdia/CocktailApp-SwiftUI/assets/37101338/90622ad1-6815-43b3-9fd8-af46f926ca19)
+
 
 ## User Stories (HU)
 
